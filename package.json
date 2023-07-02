@@ -4,7 +4,8 @@
   "description": "API for fetching cost estimations for halef services",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/PRISM-SCALE/halef-calculator-api/issues"
   },
-  "homepage": "https://github.com/PRISM-SCALE/halef-calculator-api#readme"
+  "homepage": "https://github.com/PRISM-SCALE/halef-calculator-api#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1"
+  }
 }
