@@ -1,0 +1,19 @@
+{
+  "name": "halef-calculator-api",
+  "version": "1.0.0",
+  "description": "API for fetching cost estimations for halef services",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PRISM-SCALE/halef-calculator-api.git"
+  },
+  "author": "Chandan S S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PRISM-SCALE/halef-calculator-api/issues"
+  },
+  "homepage": "https://github.com/PRISM-SCALE/halef-calculator-api#readme"
+}
