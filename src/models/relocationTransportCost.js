@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 export const RelocationTransportCostSchema = new Schema(
   {
-    vehicle: { type: mongoose.ObjectId, required: true, ref: "vehicle" },
+    vehicle: { type: Schema.Types.ObjectId, required: true, ref: "vehicle" },
     minDistance: { type: Number, required: true, unique: true },
     maxDistance: { type: Number, required: true, unique: true },
     cost: { type: Number, required: true },

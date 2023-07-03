@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 export const RelocationPackageCostSchema = new Schema(
   {
-    packageType: { type: mongoose.ObjectId, required: true, ref: "packagetype" },
-    houseType: { type: mongoose.ObjectId, required: true, ref: "housetype" },
+    packageType: { type: Schema.Types.ObjectId, required: true, ref: "packagetype" },
+    houseType: { type: Schema.Types.ObjectId, required: true, ref: "housetype" },
     cost: { type: Number, required: true },
   },
   { timestamps: true }
