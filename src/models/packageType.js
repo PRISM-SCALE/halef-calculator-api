@@ -1,5 +1,4 @@
 import mongoose, { Schema } from "mongoose";
-const { Schema } = mongoose;
 
 export const PackageTypeSchema = new Schema(
   {
