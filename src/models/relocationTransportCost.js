@@ -1,11 +1,10 @@
 import mongoose, { Schema } from "mongoose";
-const { Schema } = mongoose;
 
 export const RelocationTransportCostSchema = new Schema(
   {
     vehicle: { type: Schema.Types.ObjectId, required: true, ref: "vehicle" },
-    minDistance: { type: Number, required: true, unique: true },
-    maxDistance: { type: Number, required: true, unique: true },
+    minDistance: { type: Number, required: true },
+    maxDistance: { type: Number, required: true },
     cost: { type: Number, required: true },
   },
   { timestamps: true }

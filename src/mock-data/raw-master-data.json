@@ -1,0 +1,2882 @@
+{
+  "relocation_package_cost": [
+    {
+      "houseType": "1RK",
+      "packageType": "NONE",
+      "cost": 500
+    },
+    {
+      "houseType": "1RK",
+      "packageType": "SEMI",
+      "cost": 1000
+    },
+    {
+      "houseType": "1RK",
+      "packageType": "FULL",
+      "cost": 1500
+    },
+    {
+      "houseType": "1RK",
+      "packageType": "FRAGILE",
+      "cost": 2000
+    },
+    {
+      "houseType": "1BHK",
+      "packageType": "NONE",
+      "cost": 500
+    },
+    {
+      "houseType": "1BHK",
+      "packageType": "SEMI",
+      "cost": 2000
+    },
+    {
+      "houseType": "1BHK",
+      "packageType": "FULL",
+      "cost": 2500
+    },
+    {
+      "houseType": "1BHK",
+      "packageType": "FRAGILE",
+      "cost": 3000
+    },
+    {
+      "houseType": "2BHK",
+      "packageType": "NONE",
+      "cost": 1000
+    },
+    {
+      "houseType": "2BHK",
+      "packageType": "SEMI",
+      "cost": 3000
+    },
+    {
+      "houseType": "2BHK",
+      "packageType": "FULL",
+      "cost": 4000
+    },
+    {
+      "houseType": "2BHK",
+      "packageType": "FRAGILE",
+      "cost": 4500
+    },
+    {
+      "houseType": "3BHK",
+      "packageType": "NONE",
+      "cost": 1500
+    },
+    {
+      "houseType": "3BHK",
+      "packageType": "SEMI",
+      "cost": 4000
+    },
+    {
+      "houseType": "3BHK",
+      "packageType": "FULL",
+      "cost": 7000
+    },
+    {
+      "houseType": "3BHK",
+      "packageType": "FRAGILE",
+      "cost": 5000
+    },
+    {
+      "houseType": "4BHK",
+      "packageType": "NONE",
+      "cost": 2000
+    },
+    {
+      "houseType": "4BHK",
+      "packageType": "SEMI",
+      "cost": 5000
+    },
+    {
+      "houseType": "4BHK",
+      "packageType": "FULL",
+      "cost": 8000
+    },
+    {
+      "houseType": "4BHK",
+      "packageType": "FRAGILE",
+      "cost": 6000
+    },
+    {
+      "houseType": "5BHK",
+      "packageType": "NONE",
+      "cost": 2500
+    },
+    {
+      "houseType": "5BHK",
+      "packageType": "SEMI",
+      "cost": 6000
+    },
+    {
+      "houseType": "5BHK",
+      "packageType": "FULL",
+      "cost": 10000
+    },
+    {
+      "houseType": "5BHK",
+      "packageType": "FRAGILE",
+      "cost": 7000
+    }
+  ],
+  "relocation_travel_cost": [
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 2500
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 3000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 3500
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 4000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 5000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 6000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 10000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 12500
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 15000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 17500
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 20000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 25000
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 0
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 0
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 0
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 0
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 0
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 0
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 3000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 3500
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 4000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 4500
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 5500
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 7000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 12000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 14000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 15000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 20000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 25000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 30000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 35000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 40000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 45000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 50000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 60000
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 70000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 4000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 4500
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 5000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 5500
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 6500
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 9000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 14000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 16000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 18000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 22000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 28000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 35000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 40000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 45000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 50000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 55000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 70000
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 80000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 5000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 5500
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 6000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 6500
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 7500
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 10000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 15000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 20000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 22000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 25000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 30000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 40000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 45000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 50000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 55000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 60000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 75000
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 90000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 6000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 6500
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 7000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 7500
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 8000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 12000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 18000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 25000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 28000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 32000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 40000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 45000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 50000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 55000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 60000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 70000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 85000
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 100000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 6500
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 7000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 7500
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 8000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 8500
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 12000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 18000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 25000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 28000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 32000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 40000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 45000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 50000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 55000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 60000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 65000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 90000
+    },
+    {
+      "vehicle": "EICHER 18 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 100000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 7000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 7500
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 8000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 8500
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 9000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 12000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 18000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 25000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 28000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 32000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 40000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 45000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 50000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 55000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 60000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 65000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 90000
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 100000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 8000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 8500
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 9000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 9500
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 10000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 12500
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 18500
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 26000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 28500
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 32500
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 42000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 48000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 52000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 58000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 62000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 68000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 95000
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 110000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 9000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 9500
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 10000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 10500
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 11000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 15000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 20000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 28000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 30000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 35000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 45000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 50000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 55000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 60000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 65000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 70000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 100000
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 120000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 0,
+      "maxDistance": 10,
+      "cost": 10000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 11,
+      "maxDistance": 20,
+      "cost": 10500
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 21,
+      "maxDistance": 30,
+      "cost": 11000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 31,
+      "maxDistance": 40,
+      "cost": 11500
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 41,
+      "maxDistance": 50,
+      "cost": 12000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 51,
+      "maxDistance": 100,
+      "cost": 16000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 101,
+      "maxDistance": 200,
+      "cost": 22000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 201,
+      "maxDistance": 300,
+      "cost": 30000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 301,
+      "maxDistance": 400,
+      "cost": 32000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 401,
+      "maxDistance": 500,
+      "cost": 38000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 48000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 52000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 58000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 62000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 68000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 75000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 110000
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 130000
+    }
+  ],
+  "trucking_cost": [
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 60
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 50
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 45
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 42
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 40
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 38
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 35
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 32
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 30
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 28
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 25
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA ACE",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": -1
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 65
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 55
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 50
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 48
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 45
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 42
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 40
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 36
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 32
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 30
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 28
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 27
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 26
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 25
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 24
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 23
+    },
+    {
+      "vehicle": "MAHINDRA BOLERO PICK-UP",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 22
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 75
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 68
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 65
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 60
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 50
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 48
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 40
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 38
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 35
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 32
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 30
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": -1
+    },
+    {
+      "vehicle": "TATA 407",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": -1
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 80
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 70
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 68
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 62
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 52
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 50
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 42
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 40
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 38
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 35
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 32
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 30
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 28
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 27
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 26
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 25
+    },
+    {
+      "vehicle": "EICHER 14 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 24
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 85
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 75
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 70
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 65
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 55
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 52
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 45
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 42
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 40
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 38
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 38
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 37
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 36
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 35
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 34
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 33
+    },
+    {
+      "vehicle": "EICHER 17 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 32
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 88
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 78
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 72
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 68
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 60
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 55
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 48
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 45
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 42
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 40
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 40
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 38
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 37
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 36
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 35
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 34
+    },
+    {
+      "vehicle": "EICHER 19 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 33
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 90
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 80
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 75
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 70
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 62
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 58
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 50
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 48
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 45
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 42
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 40
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 39
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 38
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 37
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 36
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 35
+    },
+    {
+      "vehicle": "20 FEET CONTAINER",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 34
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": 92
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 82
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 78
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 72
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 65
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 60
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 52
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 50
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 42
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 40
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 41
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 40
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 39
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 38
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 37
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 36
+    },
+    {
+      "vehicle": "TATA 22 FEET",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 35
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": -1
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 95
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 80
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 75
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 70
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 65
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 60
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 55
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 50
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 45
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 44
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 43
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 42
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 41
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 40
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 39
+    },
+    {
+      "vehicle": "CONTAINER 32FT SXL",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 40
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 0,
+      "maxDistance": 100,
+      "cost": -1
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 101,
+      "maxDistance": 150,
+      "cost": 98
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 151,
+      "maxDistance": 200,
+      "cost": 82
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 201,
+      "maxDistance": 250,
+      "cost": 78
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 251,
+      "maxDistance": 300,
+      "cost": 72
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 301,
+      "maxDistance": 350,
+      "cost": 68
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 351,
+      "maxDistance": 400,
+      "cost": 62
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 401,
+      "maxDistance": 450,
+      "cost": 60
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 451,
+      "maxDistance": 500,
+      "cost": 55
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 501,
+      "maxDistance": 750,
+      "cost": 50
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 751,
+      "maxDistance": 1000,
+      "cost": 49
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1001,
+      "maxDistance": 1250,
+      "cost": 48
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1251,
+      "maxDistance": 1500,
+      "cost": 47
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1501,
+      "maxDistance": 1750,
+      "cost": 46
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 1751,
+      "maxDistance": 2200,
+      "cost": 45
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 2201,
+      "maxDistance": 2500,
+      "cost": 44
+    },
+    {
+      "vehicle": "CONTAINER 40FT SXXL",
+      "minDistance": 2501,
+      "maxDistance": 3000,
+      "cost": 43
+    }
+  ],
+  "warehousing_package_cost": [
+    {
+      "cft": 100,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 200,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 300,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 400,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 500,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 600,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 800,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 1000,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 1200,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 1400,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 1600,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 1800,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 2000,
+      "packageType": "NONE",
+      "cost": 10
+    },
+    {
+      "cft": 100,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 200,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 300,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 400,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 500,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 600,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 800,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 1000,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 1200,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 1400,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 1600,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 1800,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 2000,
+      "packageType": "SEMI",
+      "cost": 15
+    },
+    {
+      "cft": 100,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 200,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 300,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 400,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 500,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 600,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 800,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 1000,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 1200,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 1400,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 1600,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 1800,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 2000,
+      "packageType": "FULL",
+      "cost": 20
+    },
+    {
+      "cft": 100,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 200,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 300,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 400,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 500,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 600,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 800,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 1000,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 1200,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 1400,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 1600,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 1800,
+      "packageType": "FRAGILE",
+      "cost": 25
+    },
+    {
+      "cft": 2000,
+      "packageType": "FRAGILE",
+      "cost": 25
+    }
+  ],
+  "warehousing_storage_cost": [
+    {
+      "cft": 100,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 200,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 300,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 400,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 500,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 600,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 800,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 1000,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 1200,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 1400,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 1600,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 1800,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 2000,
+      "minDays": 0,
+      "maxDays": 31,
+      "cost": 2
+    },
+    {
+      "cft": 100,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 200,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 300,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 400,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 500,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 600,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 800,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 1000,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.9
+    },
+    {
+      "cft": 1200,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.8
+    },
+    {
+      "cft": 1400,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.8
+    },
+    {
+      "cft": 1600,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.8
+    },
+    {
+      "cft": 1800,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.8
+    },
+    {
+      "cft": 2000,
+      "minDays": 32,
+      "maxDays": 60,
+      "cost": 1.8
+    },
+    {
+      "cft": 100,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 200,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 300,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 400,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 500,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 600,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 800,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 1000,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.8
+    },
+    {
+      "cft": 1200,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.7
+    },
+    {
+      "cft": 1400,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.7
+    },
+    {
+      "cft": 1600,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.7
+    },
+    {
+      "cft": 1800,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.7
+    },
+    {
+      "cft": 2000,
+      "minDays": 61,
+      "maxDays": 200,
+      "cost": 1.7
+    },
+    {
+      "cft": 100,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 200,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 300,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 400,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 500,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 600,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 800,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 1000,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.7
+    },
+    {
+      "cft": 1200,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.6
+    },
+    {
+      "cft": 1400,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.6
+    },
+    {
+      "cft": 1600,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.6
+    },
+    {
+      "cft": 1800,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.6
+    },
+    {
+      "cft": 2000,
+      "minDays": 201,
+      "maxDays": 400,
+      "cost": 1.6
+    },
+    {
+      "cft": 100,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 200,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 300,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 400,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 500,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 600,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 800,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 1000,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.6
+    },
+    {
+      "cft": 1200,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.5
+    },
+    {
+      "cft": 1400,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.5
+    },
+    {
+      "cft": 1600,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.5
+    },
+    {
+      "cft": 1800,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.5
+    },
+    {
+      "cft": 2000,
+      "minDays": 401,
+      "maxDays": 9999999999,
+      "cost": 1.5
+    }
+  ]
+}
