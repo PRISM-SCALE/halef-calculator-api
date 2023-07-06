@@ -34,7 +34,7 @@ export const relocationCalc = async (req, res, next) => {
 
     const total = insurance + transportCost + packageCost;
 
-    return res.send({ currency: "INR", transportCost, packageCost, insurance, total, isVehicleAllowed });
+    return res.send({ currency: "INR", transportCost, packageCost, insurance, total });
   } catch (error) {
     console.error(`Error while Calculating relocation price`);
     console.log(error);
