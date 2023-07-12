@@ -1,4 +1,4 @@
-import TruckingTransportCost from "../../models/truckingTransportCost";
+import TruckingTransportCost from "../../models/truckingTransportCost.js";
 
 export const truckingCalc = async (req, res, next) => {
 	try {
