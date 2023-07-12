@@ -7,7 +7,7 @@ export const courierCargoCalc = async (req, res, next) => {
 			length,
 			width,
 			height,
-			shipment,
+			carrierCode,
 			// region,
 			// originPincode,
 			// destinationPincode,
@@ -19,7 +19,7 @@ export const courierCargoCalc = async (req, res, next) => {
 		if (isNaN(width)) return res.status(400).send({error: `width MUST be a number!`});
 		if (isNaN(height)) return res.status(400).send({error: `height MUST be a number!`});
 
-		const transportCostMap = await CourierCargoCost.findOne({carrierCode: shipment, docType})
+		const transportCostMap = await CourierCargoCost.findOne({carrierCode, docType})
 			.where("minWeight")
 			.lt(Number(weight))
 			.where("maxWeight")
@@ -33,10 +33,10 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		let volumetricWeight;
 
-		if (shipment === "ground_express") {
-			volumetricWeight = (length * width * height) / 4500;
+		if (carrierCode === "ground_express") {
+			volumetricWeight = (Number(length) * Number(width) * Number(height)) / 4500;
 		} else {
-			volumetricWeight = (length * width * height) / 4750;
+			volumetricWeight = (Number(length) * Number(width) * Number(height)) / 4750;
 		}
 
 		const total = transportCost;
