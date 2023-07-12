@@ -1,7 +1,8 @@
 import CourierCargoCost from "../../models/courierCargoCost";
 
 export const courierCargoCalc = async (req, res, next) => {
-	try {
+  try {
+    
 	} catch (error) {
 		console.error(`Error while Calculating relocation price`);
 		console.log(error);

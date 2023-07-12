@@ -6,6 +6,7 @@ import houseTypeRouter from "./houseTypeRoute.js";
 import calculatorRoute from "./calculatorRoute.js";
 import relocationTransportCostRouter from "./relocationTransportCostRoute.js";
 import relocationPackageCostRouter from "./relocationPackageCostRoute.js";
+import courierCargoCostRouter from "./courierCargoCostRoute.js";
 
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.use("/calculate", calculatorRoute);
 //*****************DO NOT DELETE BELOW ROUTES*******************
 // router.use("/reloctransportcost", relocationTransportCostRouter);
 // router.use("/relocpackagecost", relocationPackageCostRouter);
+router.use("/couriercargocost", courierCargoCostRouter);
 
 export default router;

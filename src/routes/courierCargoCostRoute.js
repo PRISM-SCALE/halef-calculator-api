@@ -1,8 +1,8 @@
 import express from "express";
-import { AddBulkCourierCargoCost } from "../controllers/courierCargoCostController";
+import { AddBulkCourierCargoTransportCost } from "../controllers/courierCargoCostController";
 
 const router = express.Router();
 
-router.post("/", AddBulkCourierCargoCost);
+router.post("/", AddBulkCourierCargoTransportCost);
 
 export default router;
