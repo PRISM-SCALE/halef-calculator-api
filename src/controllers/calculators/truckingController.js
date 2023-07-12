@@ -1,0 +1,30 @@
+import TruckingTransportCost from "../../models/truckingTransportCost";
+
+export const truckingCalc = async (req, res, next) => {
+	try {
+		const {distance, vehicle} = req.body;
+		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
+
+		const transportCostMap = await TruckingTransportCost.findOne({vehicle})
+			.where("minDistance")
+			.lt(Number(distance))
+			.where("maxDistance")
+			.gt(Number(distance))
+			.exec();
+
+		if (!Boolean(transportCostMap))
+			return res.status(500).send({error: "Error calculating transport cost"});
+		const transportCost = transportCostMap?.cost;
+
+		const total = transportCost;
+
+		return res.send({currency: "INR", transportCost, total});
+	} catch (error) {
+		console.error(`Error while Calculating trucking price`);
+		console.log(error);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Calculating trucking price. Please try again later",
+		});
+	}
+};
