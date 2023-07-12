@@ -1,4 +1,4 @@
-import CourierCargoCost from "../../models/courierCargoCost";
+import CourierCargoCost from "../../models/courierCargoCost.js";
 
 export const courierCargoCalc = async (req, res, next) => {
 	try {
@@ -8,13 +8,13 @@ export const courierCargoCalc = async (req, res, next) => {
 			width,
 			height,
 			shipment,
-			region,
-			originPincode,
-			destinationPincode,
+			// region,
+			// originPincode,
+			// destinationPincode,
 			docType,
-		} = res.body;
+		} = req.body;
 
-		if (isNaN(weight)) return res.status(400).send({error: `weight MUST be a number!`});
+		if (isNaN(weight) && weight) return res.status(400).send({error: `weight MUST be a number!`});
 		if (isNaN(length)) return res.status(400).send({error: `length MUST be a number!`});
 		if (isNaN(width)) return res.status(400).send({error: `width MUST be a number!`});
 		if (isNaN(height)) return res.status(400).send({error: `height MUST be a number!`});

@@ -20,6 +20,6 @@ router.use("/calculate", calculatorRoute);
 //*****************DO NOT DELETE BELOW ROUTES*******************
 // router.use("/reloctransportcost", relocationTransportCostRouter);
 // router.use("/relocpackagecost", relocationPackageCostRouter);
-router.use("/couriercargocost", courierCargoCostRouter);
+// router.use("/couriercargocost", courierCargoCostRouter);
 
 export default router;
