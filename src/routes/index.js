@@ -8,6 +8,8 @@ import relocationTransportCostRouter from "./relocationTransportCostRoute.js";
 import relocationPackageCostRouter from "./relocationPackageCostRoute.js";
 import courierCargoCostRouter from "./courierCargoCostRoute.js";
 import truckingTransportCostRouter from "./truckingTransportCostRoute.js";
+import warehousePackageCostRouter from "./warehousePackageCostRoute.js";
+import warehouseStorageCostRouter from "./warehouseStorageCostRoute.js";
 
 const router = express.Router();
 
@@ -23,5 +25,7 @@ router.use("/calculate", calculatorRoute);
 // router.use("/relocpackagecost", relocationPackageCostRouter);
 // router.use("/couriercargocost", courierCargoCostRouter);
 // router.use("/truckingcost", truckingTransportCostRouter);
+router.use("/warehousepackagecost", warehousePackageCostRouter);
+router.use("/warehousestoragecost", warehouseStorageCostRouter);
 
 export default router;
