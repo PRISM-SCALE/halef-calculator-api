@@ -10,6 +10,7 @@ import courierCargoCostRouter from "./courierCargoCostRoute.js";
 import truckingTransportCostRouter from "./truckingTransportCostRoute.js";
 import warehousePackageCostRouter from "./warehousePackageCostRoute.js";
 import warehouseStorageCostRouter from "./warehouseStorageCostRoute.js";
+import citiesRouter from "./citiesRoute.js";
 
 const router = express.Router();
 
@@ -19,13 +20,14 @@ router.use("/vehicles", vehicleRouter);
 router.use("/packagetypes", packageTypeRouter);
 router.use("/housetypes", houseTypeRouter);
 router.use("/calculate", calculatorRoute);
+router.use("/cities", citiesRouter);
 
 //*****************DO NOT DELETE BELOW ROUTES*******************
 // router.use("/reloctransportcost", relocationTransportCostRouter);
 // router.use("/relocpackagecost", relocationPackageCostRouter);
 // router.use("/couriercargocost", courierCargoCostRouter);
 // router.use("/truckingcost", truckingTransportCostRouter);
-router.use("/warehousepackagecost", warehousePackageCostRouter);
-router.use("/warehousestoragecost", warehouseStorageCostRouter);
+// router.use("/warehousepackagecost", warehousePackageCostRouter);
+// router.use("/warehousestoragecost", warehouseStorageCostRouter);
 
 export default router;

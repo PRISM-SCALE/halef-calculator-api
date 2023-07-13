@@ -12,7 +12,7 @@ export const AddBulkWarehousePackageCost = async (req, res, next) => {
 
 			const ptObj = packageTypes.find((pt) => pt.code === packageType);
 			if (!Boolean(ptObj))
-				res
+				return res
 					.status(400)
 					.send({error: `'${packageType}' - INVALID Package type or Package Type NOT FOUND`});
 

@@ -2617,390 +2617,455 @@
 	],
 	"warehousing_storage_cost": [
 		{
+			"sqft": 50,
 			"cft": 100,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 100,
 			"cft": 200,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 150,
 			"cft": 300,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 200,
 			"cft": 400,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 250,
 			"cft": 500,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 300,
 			"cft": 600,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 400,
 			"cft": 800,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 500,
 			"cft": 1000,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 600,
 			"cft": 1200,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 700,
 			"cft": 1400,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 800,
 			"cft": 1600,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 900,
 			"cft": 1800,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 1000,
 			"cft": 2000,
 			"minDays": 0,
 			"maxDays": 31,
 			"cost": 2
 		},
 		{
+			"sqft": 50,
 			"cft": 100,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 100,
 			"cft": 200,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 150,
 			"cft": 300,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 200,
 			"cft": 400,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 250,
 			"cft": 500,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 300,
 			"cft": 600,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 400,
 			"cft": 800,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 500,
 			"cft": 1000,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.9
 		},
 		{
+			"sqft": 600,
 			"cft": 1200,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.8
 		},
 		{
+			"sqft": 700,
 			"cft": 1400,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.8
 		},
 		{
+			"sqft": 800,
 			"cft": 1600,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.8
 		},
 		{
+			"sqft": 900,
 			"cft": 1800,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.8
 		},
 		{
+			"sqft": 1000,
 			"cft": 2000,
 			"minDays": 32,
 			"maxDays": 60,
 			"cost": 1.8
 		},
 		{
+			"sqft": 50,
 			"cft": 100,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 100,
 			"cft": 200,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 150,
 			"cft": 300,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 200,
 			"cft": 400,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 250,
 			"cft": 500,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 300,
 			"cft": 600,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 400,
 			"cft": 800,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 500,
 			"cft": 1000,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.8
 		},
 		{
+			"sqft": 600,
 			"cft": 1200,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.7
 		},
 		{
+			"sqft": 700,
 			"cft": 1400,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.7
 		},
 		{
+			"sqft": 800,
 			"cft": 1600,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.7
 		},
 		{
+			"sqft": 900,
 			"cft": 1800,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.7
 		},
 		{
+			"sqft": 1000,
 			"cft": 2000,
 			"minDays": 61,
 			"maxDays": 200,
 			"cost": 1.7
 		},
 		{
+			"sqft": 50,
 			"cft": 100,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 100,
 			"cft": 200,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 150,
 			"cft": 300,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 200,
 			"cft": 400,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 250,
 			"cft": 500,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 300,
 			"cft": 600,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 400,
 			"cft": 800,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 500,
 			"cft": 1000,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.7
 		},
 		{
+			"sqft": 600,
 			"cft": 1200,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.6
 		},
 		{
+			"sqft": 700,
 			"cft": 1400,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.6
 		},
 		{
+			"sqft": 800,
 			"cft": 1600,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.6
 		},
 		{
+			"sqft": 900,
 			"cft": 1800,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.6
 		},
 		{
+			"sqft": 1000,
 			"cft": 2000,
 			"minDays": 201,
 			"maxDays": 400,
 			"cost": 1.6
 		},
 		{
+			"sqft": 50,
 			"cft": 100,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 100,
 			"cft": 200,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 150,
 			"cft": 300,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 200,
 			"cft": 400,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 250,
 			"cft": 500,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 300,
 			"cft": 600,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 400,
 			"cft": 800,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 500,
 			"cft": 1000,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.6
 		},
 		{
+			"sqft": 600,
 			"cft": 1200,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.5
 		},
 		{
+			"sqft": 700,
 			"cft": 1400,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.5
 		},
 		{
+			"sqft": 800,
 			"cft": 1600,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.5
 		},
 		{
+			"sqft": 900,
 			"cft": 1800,
 			"minDays": 401,
 			"maxDays": 9999999999,
 			"cost": 1.5
 		},
 		{
+			"sqft": 1000,
 			"cft": 2000,
 			"minDays": 401,
 			"maxDays": 9999999999,

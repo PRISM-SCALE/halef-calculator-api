@@ -4,12 +4,14 @@ export const AddBulkWarehouseStorageCost = async (req, res, next) => {
 	try {
 		const {data} = req.body;
 		const objects = data.map((item, index) => {
-			const {cft, minDays, maxDays, cost} = item;
+			const {cft, minDays, maxDays, cost, sqft} = item;
 
-			if (isNaN(minDays) || isNaN(maxDays) || isNaN(cost))
-				return res.status(400).send({error: `minDays, maxDays and cost MUST be a number`});
+			if (isNaN(minDays) || isNaN(maxDays) || isNaN(cost) || isNaN(sqft) || isNaN(cft))
+				return res
+					.status(400)
+					.send({error: `minDays, maxDays, sqft, cft and cost MUST be a number`});
 
-			return {cft, minDays, maxDays, cost};
+			return {cft, minDays, maxDays, cost, sqft};
 		});
 
 		const response = await WarehouseStorageCost.insertMany(objects);
