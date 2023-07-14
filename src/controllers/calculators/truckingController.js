@@ -16,7 +16,7 @@ export const truckingCalc = async (req, res, next) => {
 			return res.status(500).send({error: "Error calculating transport cost"});
 		const transportCost = transportCostMap?.cost;
 
-		const total = transportCost;
+		const total = transportCost * distance;
 
 		return res.send({currency: "INR", transportCost, total});
 	} catch (error) {

@@ -39,7 +39,7 @@ export const courierCargoCalc = async (req, res, next) => {
 			volumetricWeight = (Number(length) * Number(width) * Number(height)) / 4750;
 		}
 
-		const total = transportCost;
+		const total = transportCost * weight;
 
 		return res.send({currency: "INR", transportCost, total, volumetricWeight});
 	} catch (error) {

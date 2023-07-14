@@ -22,7 +22,7 @@ export const warehouseCalc = async (req, res, next) => {
 		const packageCostMap = await WarehousePackageCost.findOne({packageType});
 		if (!Boolean(packageCostMap))
 			return res.status(500).send({error: "Error calculating package cost"});
-		const packageCost = packageCostMap?.cost;
+		const packageCost = packageCostMap?.cost * cft;
 
 		const total = storageCost + packageCost;
 
