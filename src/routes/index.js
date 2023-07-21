@@ -10,6 +10,7 @@ import courierCargoCostRouter from "./courierCargoCostRoute.js";
 import truckingTransportCostRouter from "./truckingTransportCostRoute.js";
 import warehousePackageCostRouter from "./warehousePackageCostRoute.js";
 import warehouseStorageCostRouter from "./warehouseStorageCostRoute.js";
+import airAmbulanceCostRouter from "./airAmbulanceCostRoute.js";
 import citiesRouter from "./citiesRoute.js";
 
 const router = express.Router();
@@ -29,5 +30,6 @@ router.use("/cities", citiesRouter);
 // router.use("/truckingcost", truckingTransportCostRouter);
 // router.use("/warehousepackagecost", warehousePackageCostRouter);
 // router.use("/warehousestoragecost", warehouseStorageCostRouter);
+// router.use("/airambulancecost", airAmbulanceCostRouter);
 
 export default router;
