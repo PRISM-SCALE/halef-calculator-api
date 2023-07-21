@@ -121,6 +121,59 @@
 			"cost": 7000
 		}
 	],
+	"airport_cities": [
+		{
+			"cityName": "Ahmedabad"
+		},
+		{
+			"cityName": "Andaman and Nicobar Islands"
+		},
+		{
+			"cityName": "Amritsar"
+		},
+		{
+			"cityName": "Bengaluru"
+		},
+		{
+			"cityName": "Chennai"
+		},
+		{
+			"cityName": "Kozhikode"
+		},
+		{
+			"cityName": "Delhi"
+		},
+		{
+			"cityName": "Goa"
+		},
+		{
+			"cityName": "Guwahati"
+		},
+		{
+			"cityName": "Hyderabad"
+		},
+		{
+			"cityName": "Jaipur"
+		},
+		{
+			"cityName": "Kolkata"
+		},
+		{
+			"cityName": "Kochi"
+		},
+		{
+			"cityName": "Mumbai"
+		},
+		{
+			"cityName": "Nagpur"
+		},
+		{
+			"cityName": "Srinagar"
+		},
+		{
+			"cityName": "Thiruvananthapuram"
+		}
+	],
 	"relocation_travel_cost": [
 		{
 			"vehicle": "TATA  ACE",
@@ -2485,6 +2538,72 @@
 			"cft": 2000,
 			"packageType": "FRAGILE",
 			"cost": 25
+		}
+	],
+	"air_ambulance_cost": [
+		{
+			"cityCombinationType": "port",
+			"isSourceAirportCity": true,
+			"isDestinationAirportCity": true,
+			"minWeight": 0,
+			"maxWeight": 130,
+			"rate": 400
+		},
+		{
+			"cityCombinationType": "port",
+			"isSourceAirportCity": true,
+			"isDestinationAirportCity": true,
+			"minWeight": 130,
+			"maxWeight": 999999999,
+			"rate": 350
+		},
+		{
+			"cityCombinationType": "mixed",
+			"isSourceAirportCity": true,
+			"isDestinationAirportCity": false,
+			"minWeight": 0,
+			"maxWeight": 130,
+			"rate": 450
+		},
+		{
+			"cityCombinationType": "mixed",
+			"isSourceAirportCity": true,
+			"isDestinationAirportCity": false,
+			"minWeight": 130,
+			"maxWeight": 999999999,
+			"rate": 400
+		},
+		{
+			"cityCombinationType": "mixed",
+			"isSourceAirportCity": false,
+			"isDestinationAirportCity": true,
+			"minWeight": 0,
+			"maxWeight": 130,
+			"rate": 450
+		},
+		{
+			"cityCombinationType": "mixed",
+			"isSourceAirportCity": false,
+			"isDestinationAirportCity": true,
+			"minWeight": 130,
+			"maxWeight": 999999999,
+			"rate": 400
+		},
+		{
+			"cityCombinationType": "non_port",
+			"isSourceAirportCity": false,
+			"isDestinationAirportCity": false,
+			"minWeight": 0,
+			"maxWeight": 130,
+			"rate": 500
+		},
+		{
+			"cityCombinationType": "non_port",
+			"isSourceAirportCity": false,
+			"isDestinationAirportCity": false,
+			"minWeight": 130,
+			"maxWeight": 999999999,
+			"rate": 450
 		}
 	],
 	"courier_cargo_cost": [

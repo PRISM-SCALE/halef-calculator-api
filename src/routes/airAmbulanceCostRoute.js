@@ -6,3 +6,4 @@ const router = express.Router();
 router.post("/", addAirAmbulanceCost);
 
 export default router;
+//airAmbulanceAirportCitiesRoute
