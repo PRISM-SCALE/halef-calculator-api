@@ -1,18 +1,27 @@
 import HouseType from "../../models/houseType.js";
+import Vehicle from "../../models/vehicle.js";
 import RelocationPackageCost from "../../models/relocationPackageCost.js";
 import RelocationTransportCost from "../../models/relocationTransportCost.js";
 
 export const relocationCalc = async (req, res, next) => {
 	try {
 		const {distance, vehicle, packageType, houseType, requireInsurance, goodsValue} = req.body;
+
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
+
 		const houseTypeObj = await HouseType.findOne({_id: houseType}).populate("allowedVehicles");
 		if (!Boolean(houseTypeObj)) return res.status(400).send({error: `INVALID house type`});
+
 		const isVehicleAllowed = houseTypeObj.allowedVehicles.some((v) => v.id === vehicle);
 		if (!Boolean(isVehicleAllowed))
 			return res
 				.status(400)
 				.send({error: `the requested vehicle is NOT allowed for the selected HOUSE TYPE`});
+
+		// to get the vehicle image
+		const vehicleTypeObj = await Vehicle.findOne({_id: vehicle});
+		const vehicleImage = vehicleTypeObj.imageUrl;
+		const vehicleName = vehicleTypeObj.name;
 
 		let insurance = 0;
 		if (Boolean(requireInsurance)) {
@@ -39,7 +48,17 @@ export const relocationCalc = async (req, res, next) => {
 
 		const total = insurance + transportCost + packageCost;
 
-		return res.send({currency: "INR", transportCost, packageCost, insurance, total});
+		return res.send({
+			vehicleImage,
+			vehicleName,
+			currency: "INR",
+			relocationCost: [
+				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+				{name: "PACKAGE COST", cost: packageCost, unit: "₹"},
+				{name: "INSURANCE", cost: insurance, unit: "₹"},
+				{name: "TOTAL", cost: total, unit: "₹"},
+			],
+		});
 	} catch (error) {
 		console.error(`Error while Calculating relocation price`);
 		console.log(error);
