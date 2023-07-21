@@ -13,6 +13,7 @@ export const relocationCalc = async (req, res, next) => {
 		if (!Boolean(houseTypeObj)) return res.status(400).send({error: `INVALID house type`});
 
 		const isVehicleAllowed = houseTypeObj.allowedVehicles.some((v) => v.id === vehicle);
+		
 		if (!Boolean(isVehicleAllowed))
 			return res
 				.status(400)
