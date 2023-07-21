@@ -70,19 +70,19 @@ export const airAmbulanceCalc = async (req, res, next) => {
 			return isSourceAirportCity;
 		});
 
-		const destinationAirportCity = airportCities.map((city) => {
+		const destinationAirportCity = airportCities.find((city) => {
 			const isDestinationAirportCity = city === destinationCity;
 			return isDestinationAirportCity;
 		});
 
-		console.log("SOURCE: ", Boolean(sourceAirportCity));
-		console.log("DESTINATION: ", destinationAirportCity);
+		// console.log("SOURCE: ", Boolean(sourceAirportCity));
+		// console.log("DESTINATION: ", Boolean(destinationAirportCity));
 
 		const isSourceAirportCity = Boolean(sourceAirportCity);
 		const isDestinationAirportCity = Boolean(destinationAirportCity);
 
-		console.log("IS_SOURCE: ", isSourceAirportCity);
-		console.log("IS_DESTINATION: ", isDestinationAirportCity);
+		// console.log("IS_SOURCE: ", isSourceAirportCity);
+		// console.log("IS_DESTINATION: ", isDestinationAirportCity);
 
 		let cityCombinationType = "";
 		let packingCost = isPackingRequired ? 5000 : 0;
