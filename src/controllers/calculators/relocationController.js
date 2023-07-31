@@ -13,7 +13,7 @@ export const relocationCalc = async (req, res, next) => {
 		if (!Boolean(houseTypeObj)) return res.status(400).send({error: `INVALID house type`});
 
 		const isVehicleAllowed = houseTypeObj.allowedVehicles.some((v) => v.id === vehicle);
-		
+
 		if (!Boolean(isVehicleAllowed))
 			return res
 				.status(400)
@@ -50,10 +50,10 @@ export const relocationCalc = async (req, res, next) => {
 		const total = insurance + transportCost + packageCost;
 
 		return res.send({
-			vehicleImage,
-			vehicleName,
+			image: vehicleImage,
+			name: vehicleName,
 			currency: "INR",
-			relocationCost: [
+			costData: [
 				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
 				{name: "PACKAGE COST", cost: packageCost, unit: "₹"},
 				{name: "INSURANCE", cost: insurance, unit: "₹"},

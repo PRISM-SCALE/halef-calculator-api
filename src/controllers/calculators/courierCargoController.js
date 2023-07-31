@@ -41,7 +41,19 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		const total = transportCost * weight;
 
-		return res.send({currency: "INR", transportCost, total, volumetricWeight, carrierCode});
+		// RESPONSE DATA
+		// return res.send({ currency: "INR", transportCost, total, volumetricWeight, carrierCode });
+		return res.send({
+			image: "",
+			name: "COURIER & CARGO",
+			currency: "INR",
+			costData: [
+				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+				{name: "CARRIER CODE", cost: carrierCode, unit: ""},
+				{name: "VOLUMETRIC WEIGHT", cost: volumetricWeight, unit: "kg"},
+				{name: "TOTAL", cost: total, unit: "₹"},
+			],
+		});
 	} catch (error) {
 		console.error(`Error while Calculating courier % cargo price`);
 		console.log(error);
