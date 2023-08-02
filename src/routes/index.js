@@ -12,10 +12,12 @@ import warehousePackageCostRouter from "./warehousePackageCostRoute.js";
 import warehouseStorageCostRouter from "./warehouseStorageCostRoute.js";
 import airAmbulanceCostRouter from "./airAmbulanceCostRoute.js";
 import airAmbulanceAirportCitiesRouter from "./airAmbulanceAirportCitiesRoute.js";
-import citiesRouter from "./citiesRoute.js";
-import sendOTPRouter from "./sendOTPRoute.js";
+import OTPRouter from "./OTPRoute.js";
+import UserRouter from "./UserRoute.js";
 
 const router = express.Router();
+
+// router.use("/cities", citiesRouter);
 
 //routes
 router.use("/services", serviceRouter);
@@ -23,8 +25,8 @@ router.use("/vehicles", vehicleRouter);
 router.use("/packagetypes", packageTypeRouter);
 router.use("/housetypes", houseTypeRouter);
 router.use("/calculate", calculatorRoute);
-router.use("/cities", citiesRouter);
-router.use("/otp", sendOTPRouter);
+router.use("/otp", OTPRouter);
+router.use("/user", UserRouter);
 
 //*****************DO NOT DELETE BELOW ROUTES*******************
 // router.use("/reloctransportcost", relocationTransportCostRouter);
