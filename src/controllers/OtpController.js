@@ -21,6 +21,7 @@ export const sendOTP = async (phone) => {
 	console.log(verification.status);
 
 	return verification;
+	
 };
 
 export const verifyOTP = async (phone, code) => {

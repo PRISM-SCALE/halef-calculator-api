@@ -26,7 +26,7 @@ router.use("/packagetypes", packageTypeRouter);
 router.use("/housetypes", houseTypeRouter);
 router.use("/calculate", calculatorRoute);
 router.use("/otp", OTPRouter);
-router.use("/user", UserRouter);
+router.use("/user", UserRouter); 
 
 //*****************DO NOT DELETE BELOW ROUTES*******************
 // router.use("/reloctransportcost", relocationTransportCostRouter);

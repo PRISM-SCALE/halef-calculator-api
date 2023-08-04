@@ -2,8 +2,12 @@ import User from "../models/User.js";
 import {sendOTP} from "./OtpController.js";
 
 export const createUser = async (req, res) => {
+	console.log(req.body);
+	const {name, email, phone} = req.body;
 	try {
-		const {name, email, phone} = req.body;
+		if (!isNaN(phone)) {
+			res.status(400).send({error: "phone should be the type of Number"});
+		}
 
 		if (Boolean(email) && Boolean(phone)) {
 			res.status(400).send({error: "email & phone is mandatory"});
@@ -11,19 +15,25 @@ export const createUser = async (req, res) => {
 
 		const checkUser = await User.findOne({email, phone});
 
-		if (!checkUser) {
+		console.log(checkUser);
+
+		if (!Boolean(checkUser)) {
 			const createNewUser = await User.create({
 				name,
 				email,
 				phone,
-				isPhoneVerified: false,
-				isEmailVerified: false,
 			});
 			await createNewUser.save();
 
-			sendOTP(phone);
+			const verification = sendOTP(phone);
 
-			return res.status(200).send({message: "Successfully created a user"});
+			if (verification.status === "verified") {
+				return res.status(200).send({message: "Successfully created a user", isVerified: true});
+			} else
+				return res.status(200).send({
+					message: "Successfully created a user, Verification is Required",
+					isVerified: false,
+				});
 		}
 
 		return res.status(200).send({});
