@@ -18,7 +18,16 @@ export const truckingCalc = async (req, res, next) => {
 
 		const total = transportCost * distance;
 
-		return res.send({currency: "INR", transportCost, total});
+		// return res.send({currency: "INR", transportCost, total});
+		return res.send({
+			image: "",
+			name: "TRUCKING",
+			currency: "INR",
+			costData: [
+				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+				{name: "TOTAL", cost: total, unit: "₹"},
+			],
+		});
 	} catch (error) {
 		console.error(`Error while Calculating trucking price`);
 		console.log(error);
