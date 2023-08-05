@@ -29,7 +29,17 @@ export const warehouseCalc = async (req, res, next) => {
 
 			const total = storageCost + packageCost;
 
-			return res.send({currency: "INR", storageCost, packageCost, total});
+			// return res.send({currency: "INR", storageCost, packageCost, total});
+			return res.send({
+				image: "",
+				name: "WAREHOUSE",
+				currency: "INR",
+				costData: [
+					{name: "STORAGE COST", cost: storageCost, unit: "₹"},
+					{name: "PACKAGE COST", cost: packageCost, unit: "₹"},
+					{name: "TOTAL", cost: total, unit: "₹"},
+				],
+			});
 		}
 	} catch (error) {
 		console.error(`Error while Calculating warehouse price`);

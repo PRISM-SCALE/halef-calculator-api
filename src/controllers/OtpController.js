@@ -47,7 +47,7 @@ export const verifyToken = async (req, res) => {
 		const {phone, code} = req.body;
 		const verification_check = await client.verify.v2
 			.services(serviceSid)
-			.verificationChecks.create({to: `+91${phone}`, code: `${code}`});
+			.verificationChecks.create({to: `+91${phone}`, code: code});
 
 		console.log("DATA", phone, code);
 

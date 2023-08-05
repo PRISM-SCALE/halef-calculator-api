@@ -1,5 +1,5 @@
 import User from "../models/User.js";
-import {sendOTP, verifyToken} from "./OtpController.js";
+import {sendOTP} from "./OtpController.js";
 
 export const createUser = async (req, res) => {
 	try {
