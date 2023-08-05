@@ -47,17 +47,24 @@ export const verifyToken = async (req, res) => {
 		const {phone, code} = req.body;
 		const verification_check = await client.verify.v2
 			.services(serviceSid)
-			.verificationChecks.create({to: `+91${phone}`, code: code});
+			.verificationChecks.create({to: `+91${phone}`, code: `${code}`});
 
 		console.log("DATA", phone, code);
 
 		console.log(verification_check?.status);
 
 		if (verification_check?.status === "approved") {
-			await User.findOne({isPhoneVerified: true, phone});
+			const user = await User.findOneAndUpdate({phone}, {isPhoneVerified: true}, {new: true});
+
+			if (!user) {
+				return res.status(500).send({
+					error: "User not found",
+				});
+			}
+
 			return res.status(200).send({
 				message: "You have been successfully verified",
-				isVerified: true,
+				user,
 			});
 		}
 

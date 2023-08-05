@@ -5,6 +5,8 @@ export const createUser = async (req, res) => {
 	try {
 		const {name, email, phone} = req.body;
 
+		console.log(req.body);
+
 		if (isNaN(phone)) {
 			res.status(400).send({error: "phone should be the type of Number"});
 		}
@@ -13,11 +15,9 @@ export const createUser = async (req, res) => {
 			res.status(400).send({error: "name, email & phone is mandatory"});
 		}
 
-		const checkUser = await User.findOne({email, phone});
+		const checkUser = await User.findOne({phone});
 
-		let otpVerification;
-
-		if (!Boolean(checkUser?.email) && !Boolean(checkUser?.phone)) {
+		if (!Boolean(checkUser)) {
 			const createNewUser = await User.create({
 				name,
 				email,
@@ -27,22 +27,31 @@ export const createUser = async (req, res) => {
 			await createNewUser.save();
 
 			const verification = await sendOTP(phone);
-			otpVerification = verification;
-
-			console.log(verification);
 
 			if (verification?.status === "pending") {
 				return res.status(200).send({
 					message: "Successfully created a user, verification is required",
 					isVerified: false,
+					user: createNewUser,
 				});
 			}
 		}
 
-		if (otpVerification?.status === "pending") {
+		if (!checkUser?.isPhoneVerified) {
+			const verification = await sendOTP(phone);
+
+			if (verification.status === "pending") {
+				return res.status(200).send({
+					message: "User Exists, verification is required",
+					isVerified: false,
+					user: checkUser,
+				});
+			}
+		} else {
 			return res.status(200).send({
-				message: "Successfully created a user, verification is required",
-				isVerified: false,
+				message: "Successfully Verified",
+				isVerified: true,
+				user: checkUser,
 			});
 		}
 	} catch (error) {
