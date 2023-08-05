@@ -3,7 +3,7 @@ import {sendOTP} from "./OtpController.js";
 
 export const createUser = async (req, res) => {
 	try {
-		const {name, email, phone} = req.body;
+		const {name, email, phone, service} = req.body;
 
 		console.log(req.body);
 
@@ -22,6 +22,7 @@ export const createUser = async (req, res) => {
 				name,
 				email,
 				phone,
+				service,
 			});
 
 			await createNewUser.save();

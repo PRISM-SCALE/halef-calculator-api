@@ -15,6 +15,7 @@ export const UserSchema = new Schema(
 			// 	message: "{VALUE} is not a valid 10 digit number!",
 			// },
 		},
+		services: {type: String, required: true},
 		// countryCode: {type: String, required: true, unique: true},
 		isPhoneVerified: {type: Boolean, required: true, default: false},
 		isEmailVerified: {type: Boolean, required: true, default: false},
