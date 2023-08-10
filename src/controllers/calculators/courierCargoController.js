@@ -45,13 +45,21 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		// RESPONSE DATA
 		// return res.send({ currency: "INR", transportCost, total, volumetricWeight, carrierCode });
+		const carrierCodeUppercase = carrierCode?.toUpperCase();
+
+		console.log("carrierCodeUppercase", carrierCodeUppercase);
+
+		const carrierCodeCost = carrierCodeUppercase.replaceAll("_", " ");
+
+		console.log("carrierCodeCost", carrierCodeCost);
+
 		return res.send({
 			image: "",
 			name: "COURIER & CARGO",
 			currency: "INR",
 			costData: [
 				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
-				{name: "CARRIER CODE", cost: carrierCode?.toUpperCase().replaceAll("_", " "), unit: ""},
+				{name: "CARRIER CODE", cost: carrierCodeCost, unit: ""},
 				{name: "VOLUMETRIC WEIGHT", cost: Math.round(volumetricWeight), unit: "kg"},
 				{name: "TOTAL", cost: total, unit: "₹"},
 			],
