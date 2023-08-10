@@ -14,6 +14,8 @@ export const courierCargoCalc = async (req, res, next) => {
 			docType,
 		} = req.body;
 
+		console.log("CARRIER CODE", carrierCode);
+
 		if (isNaN(weight) && weight) return res.status(400).send({error: `weight MUST be a number!`});
 		if (isNaN(length)) return res.status(400).send({error: `length MUST be a number!`});
 		if (isNaN(width)) return res.status(400).send({error: `width MUST be a number!`});
@@ -49,16 +51,16 @@ export const courierCargoCalc = async (req, res, next) => {
 			currency: "INR",
 			costData: [
 				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
-				{name: "CARRIER CODE", cost: carrierCode.toUpperCase().replaceAll("_", " "), unit: ""},
+				{name: "CARRIER CODE", cost: carrierCode?.toUpperCase().replaceAll("_", " "), unit: ""},
 				{name: "VOLUMETRIC WEIGHT", cost: Math.round(volumetricWeight), unit: "kg"},
 				{name: "TOTAL", cost: total, unit: "₹"},
 			],
 		});
 	} catch (error) {
 		console.error(`Error while Calculating courier % cargo price`);
-		console.log(error);
+		console.log(error.message);
 		res.status(500).send({
-			error: error,
+			error: error.message,
 			message: "Error while Calculating courier % cargo price. Please try again later",
 		});
 	}
