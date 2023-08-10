@@ -58,7 +58,8 @@ export const courierCargoCalc = async (req, res, next) => {
 			name: "COURIER & CARGO",
 			currency: "INR",
 			costData: [
-				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+				{name: "TRANSPORT COST/KG", cost: transportCost, unit: "₹"},
+				{name: "WEIGHT", cost: weight, unit: "kg"},
 				{name: "CARRIER CODE", cost: carrierCodeCost, unit: ""},
 				{name: "VOLUMETRIC WEIGHT", cost: Math.round(volumetricWeight), unit: "kg"},
 				{name: "TOTAL", cost: total, unit: "₹"},
