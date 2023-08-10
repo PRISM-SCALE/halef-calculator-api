@@ -58,7 +58,7 @@ export const courierCargoCalc = async (req, res, next) => {
 		console.error(`Error while Calculating courier % cargo price`);
 		console.log(error);
 		res.status(500).send({
-			error: "Internal Server Error",
+			error: error,
 			message: "Error while Calculating courier % cargo price. Please try again later",
 		});
 	}
