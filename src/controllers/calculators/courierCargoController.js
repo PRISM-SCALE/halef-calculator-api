@@ -49,7 +49,7 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		console.log("carrierCodeUppercase", carrierCodeUppercase);
 
-		const carrierCodeCost = carrierCodeUppercase.replaceAll("_", " ");
+		const carrierCodeCost = carrierCodeUppercase.replace(/_/g, " ");
 
 		console.log("carrierCodeCost", carrierCodeCost);
 
