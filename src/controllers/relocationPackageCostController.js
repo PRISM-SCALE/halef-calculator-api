@@ -12,6 +12,7 @@ export const AddBulkRelocationPackageCost = async (req, res, next) => {
     const objects = data.map((item, index) => {
       const { houseType, packageType, cost } = item;
       const htObj = houseTypes.find((ht) => ht.type === houseType);
+      
       if (!Boolean(htObj))
         res.status(400).send({ error: `'${houseType}' - INVALID House type or House Type NOT FOUND` });
       const ptObj = packageTypes.find((pt) => pt.code === packageType);

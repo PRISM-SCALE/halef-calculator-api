@@ -9,7 +9,18 @@ export const UserSchema = new Schema(
       required: true,
       unique: true,
     },
-    service: { type: String, required: true },
+    interests : [{
+      service : {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Service'
+      },
+      count: {
+        type: Number,
+        default: 0
+      }
+
+    }],
     isPhoneVerified: { type: Boolean, required: true, default: false },
     isEmailVerified: { type: Boolean, required: true, default: false },
   },
