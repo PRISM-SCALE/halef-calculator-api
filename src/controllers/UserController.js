@@ -6,6 +6,7 @@ let COUNT = 0;
 
 export const createUser = async (req, res) => {
 	try {
+		// SERVICE ID
 		const {name, email, phone, service} = req.body;
 
 		if (isNaN(phone)) {
@@ -20,11 +21,15 @@ export const createUser = async (req, res) => {
 		// const serviceObj = await Service.findOne({_id: service});
 
 		if (!Boolean(checkUser)) {
+			let newInterests = [];
+
+			newInterests.push({service: service, count: COUNT++});
+
 			const createNewUser = await User.create({
 				name,
 				email,
 				phone,
-				interests: [{service: service, count: COUNT + 1}],
+				interests: [...newInterests],
 			});
 			// .populate("name")
 			// .populate("description")
@@ -44,7 +49,13 @@ export const createUser = async (req, res) => {
 		}
 
 		if (Boolean(checkUser)) {
-			const pushInterests = await User.findOne({interests: [{service: service, count: COUNT++}]});
+			let pushNewInterest = [];
+
+			await User.findOneAndUpdate(
+				{phone},
+				{interests: [{service: service, count: COUNT++}]},
+				{new: true}
+			);
 		}
 
 		// USER NOT VERIFIED SEND OTP
