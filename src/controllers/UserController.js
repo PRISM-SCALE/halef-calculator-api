@@ -17,8 +17,9 @@ export const createUser = async (req, res) => {
 			res.status(400).send({error: "name, email & phone is mandatory"});
 		}
 
+		// interests: [{service}]
 		const checkUser = await User.findOne({phone});
-		// const serviceObj = await Service.findOne({_id: service});
+		const isServiceThere = await User.findOne({phone, interests: [{service}]});
 
 		if (!Boolean(checkUser)) {
 			let newInterests = [];
