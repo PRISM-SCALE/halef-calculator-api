@@ -33,7 +33,7 @@ const calculateCost = async (cityCombinationType, weight, packingCost, res) => {
 			airAmbulanceCost: [
 				{name: "RATE/KG", cost: perKgCost, unit: "₹"},
 				{name: "PACKING", cost: packingCost, unit: "₹"},
-				{name: "AIR AMBULANCE COST", cost: total, unit: "₹"},
+				{name: "TOTAL", cost: total, unit: "₹"},
 			],
 		});
 	}

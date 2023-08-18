@@ -12,8 +12,12 @@ export const truckingCalc = async (req, res, next) => {
 			.gt(Number(distance))
 			.exec();
 
+		console.log(vehicle, distance);
+		console.log(transportCostMap?.vehicle);
+
 		if (!Boolean(transportCostMap))
 			return res.status(500).send({error: "Error calculating transport cost"});
+
 		const transportCost = transportCostMap?.cost;
 
 		const total = transportCost * distance;

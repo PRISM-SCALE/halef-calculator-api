@@ -32,6 +32,7 @@ export const createUser = async (req, res) => {
 				phone,
 				interests: [...newInterests],
 			});
+
 			// .populate("name")
 			// .populate("description")
 			// .exec();
@@ -49,15 +50,15 @@ export const createUser = async (req, res) => {
 			}
 		}
 
-		// if (Boolean(checkUser)) {
-		// 	let pushNewInterest = [];
+		if (Boolean(checkUser)) {
+			let pushNewInterest = [];
 
-		// 	// await User.findOneAndUpdate(
-		// 	// 	{phone},
-		// 	// 	{interests: [{service: service, count: COUNT++}]},
-		// 	// 	{new: true}
-		// 	// );
-		// }
+			await User.findOneAndUpdate(
+				{phone},
+				{interests: [{service: service, count: COUNT++}]},
+				{new: true}
+			);
+		}
 
 		// USER NOT VERIFIED SEND OTP
 		if (!checkUser?.isPhoneVerified) {
