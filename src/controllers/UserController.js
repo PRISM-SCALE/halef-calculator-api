@@ -19,7 +19,7 @@ export const createUser = async (req, res) => {
 
 		// interests: [{service}]
 		const checkUser = await User.findOne({phone});
-		const isServiceThere = await User.findOne({phone, interests: [{service}]});
+		// const isServiceThere = await User.findOne({phone, interests: [{service}]});
 
 		if (!Boolean(checkUser)) {
 			let newInterests = [];
@@ -49,15 +49,15 @@ export const createUser = async (req, res) => {
 			}
 		}
 
-		if (Boolean(checkUser)) {
-			let pushNewInterest = [];
+		// if (Boolean(checkUser)) {
+		// 	let pushNewInterest = [];
 
-			await User.findOneAndUpdate(
-				{phone},
-				{interests: [{service: service, count: COUNT++}]},
-				{new: true}
-			);
-		}
+		// 	// await User.findOneAndUpdate(
+		// 	// 	{phone},
+		// 	// 	{interests: [{service: service, count: COUNT++}]},
+		// 	// 	{new: true}
+		// 	// );
+		// }
 
 		// USER NOT VERIFIED SEND OTP
 		if (!checkUser?.isPhoneVerified) {
