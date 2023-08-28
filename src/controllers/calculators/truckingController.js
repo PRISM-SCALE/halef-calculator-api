@@ -1,8 +1,17 @@
+import Enquires from "../../models/Enquires.js";
 import TruckingTransportCost from "../../models/truckingTransportCost.js";
 
 export const truckingCalc = async (req, res, next) => {
 	try {
-		const {distance, vehicle} = req.body;
+		const {distance, vehicle, userId, serviceId} = req.body;
+
+		const createNewEnquires = await Enquires.create({
+			user: userId,
+			interests: [{service: serviceId}],
+		});
+
+		createNewEnquires.save();
+
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 
 		const transportCostMap = await TruckingTransportCost.findOne({vehicle})

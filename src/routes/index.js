@@ -26,11 +26,11 @@ router.use("/packagetypes", packageTypeRouter);
 router.use("/housetypes", houseTypeRouter);
 router.use("/calculate", calculatorRoute);
 router.use("/otp", OTPRouter);
-router.use("/user", UserRouter); 
+router.use("/user", UserRouter);
 
 //*****************DO NOT DELETE BELOW ROUTES*******************
-// router.use("/reloctransportcost", relocationTransportCostRouter);
-// router.use("/relocpackagecost", relocationPackageCostRouter);
+router.use("/reloctransportcost", relocationTransportCostRouter);
+router.use("/relocpackagecost", relocationPackageCostRouter);
 // router.use("/couriercargocost", courierCargoCostRouter);
 // router.use("/truckingcost", truckingTransportCostRouter);
 // router.use("/warehousepackagecost", warehousePackageCostRouter);

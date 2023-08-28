@@ -2,10 +2,27 @@ import HouseType from "../../models/houseType.js";
 import Vehicle from "../../models/vehicle.js";
 import RelocationPackageCost from "../../models/relocationPackageCost.js";
 import RelocationTransportCost from "../../models/relocationTransportCost.js";
+import Enquires from "../../models/Enquires.js";
 
 export const relocationCalc = async (req, res, next) => {
 	try {
-		const {distance, vehicle, packageType, houseType, requireInsurance, goodsValue} = req.body;
+		const {
+			distance,
+			vehicle,
+			packageType,
+			houseType,
+			requireInsurance,
+			goodsValue,
+			userId,
+			serviceId,
+		} = req.body;
+
+		const createNewEnquires = await Enquires.create({
+			user: userId,
+			interests: [{service: serviceId}],
+		});
+
+		createNewEnquires.save();
 
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 
@@ -42,24 +59,40 @@ export const relocationCalc = async (req, res, next) => {
 			return res.status(500).send({error: "Error calculating transport cost"});
 		const transportCost = transportCostMap?.cost;
 
-		const packageCostMap = await RelocationPackageCost.findOne({packageType, houseType});
+		const packageCostMap = await RelocationPackageCost.findOne({packageType, houseType}).populate(
+			"packageType"
+		);
 		if (!Boolean(packageCostMap))
 			return res.status(500).send({error: "Error calculating package cost"});
 		const packageCost = packageCostMap?.cost;
 
 		const total = insurance + transportCost + packageCost;
 
-		return res.send({
-			image: vehicleImage,
-			name: vehicleName,
-			currency: "INR",
-			costData: [
-				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
-				{name: "PACKAGE COST", cost: packageCost, unit: "₹"},
-				{name: "INSURANCE", cost: insurance, unit: "₹"},
-				{name: "TOTAL", cost: total, unit: "₹"},
-			],
-		});
+		if (packageCostMap?.packageType?.code === "NONE") {
+			return res.send({
+				image: vehicleImage,
+				name: vehicleName,
+				currency: "INR",
+				costData: [
+					{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+					{name: "HANDLING COST", cost: packageCost, unit: "₹"},
+					{name: "INSURANCE", cost: insurance, unit: "₹"},
+					{name: "TOTAL", cost: total, unit: "₹"},
+				],
+			});
+		} else {
+			return res.send({
+				image: vehicleImage,
+				name: vehicleName,
+				currency: "INR",
+				costData: [
+					{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+					{name: "PACKAGING COST", cost: packageCost, unit: "₹"},
+					{name: "INSURANCE", cost: insurance, unit: "₹"},
+					{name: "TOTAL", cost: total, unit: "₹"},
+				],
+			});
+		}
 	} catch (error) {
 		console.error(`Error while Calculating relocation price`);
 		console.log(error);

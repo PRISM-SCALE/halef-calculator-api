@@ -1,3 +1,4 @@
+import Enquires from "../../models/Enquires.js";
 import CourierCargoCost from "../../models/courierCargoCost.js";
 
 export const courierCargoCalc = async (req, res, next) => {
@@ -12,7 +13,16 @@ export const courierCargoCalc = async (req, res, next) => {
 			// originPincode,
 			// destinationPincode,
 			docType,
+			userId,
+			serviceId,
 		} = req.body;
+
+		const createNewEnquires = await Enquires.create({
+			user: userId,
+			interests: [{service: serviceId}],
+		});
+
+		createNewEnquires.save();
 
 		console.log("CARRIER CODE", carrierCode);
 

@@ -1,3 +1,4 @@
+import Enquires from "../../models/Enquires.js";
 import AirAmbulanceCost from "../../models/airAmbulanceCost.js";
 
 const calculateCost = async (cityCombinationType, weight, packingCost, res) => {
@@ -21,7 +22,7 @@ const calculateCost = async (cityCombinationType, weight, packingCost, res) => {
 			costData: [
 				{name: "RATE/KG", cost: perKgCost, unit: "₹"},
 				{name: "PACKING", cost: packingCost, unit: "₹"},
-				{name: "AIR AMBULANCE COST", cost: total, unit: "₹"},
+				{name: "TOTAL", cost: total, unit: "₹"},
 			],
 		});
 	} else {
@@ -42,7 +43,15 @@ const calculateCost = async (cityCombinationType, weight, packingCost, res) => {
 
 export const airAmbulanceCalc = async (req, res, next) => {
 	try {
-		const {weight, sourceCity, destinationCity, isPackingRequired} = req.body;
+		const {weight, sourceCity, destinationCity, isPackingRequired, userId, serviceId} = req.body;
+
+		const createNewEnquires = await Enquires.create({
+			user: userId,
+			interests: [{service: serviceId}],
+		});
+
+		createNewEnquires.save();
+
 		const airportCities = [
 			"Ahmedabad",
 			"Andaman and Nicobar Islands",

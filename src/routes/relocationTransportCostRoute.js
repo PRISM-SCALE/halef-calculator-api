@@ -1,8 +1,12 @@
 import express from "express";
-import { AddBulkRelocationTransportCost } from "../controllers/relocationTransportCostController.js";
+import {
+	AddBulkRelocationTransportCost,
+	getRelocationTransportCost,
+} from "../controllers/relocationTransportCostController.js";
 
 const router = express.Router();
 
-router.post("/", AddBulkRelocationTransportCost);
+// router.post("/", AddBulkRelocationTransportCost);
+router.get("/", getRelocationTransportCost);
 
 export default router;
