@@ -19,7 +19,7 @@ export const relocationCalc = async (req, res, next) => {
 
 		const createNewEnquires = await Enquires.create({
 			user: userId,
-			interests: [{service: serviceId}],
+			interests: {service: serviceId},
 		});
 
 		createNewEnquires.save();
