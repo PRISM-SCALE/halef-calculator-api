@@ -2,7 +2,7 @@ import EstimateRequest from "../models/EstimateRequest.js";
 
 export const getAllEstimates = async (req, res, next) => {
 	try {
-		const enquires = await EstimateRequest.find({}).populate("user").populate("services").exec();
+		const enquires = await EstimateRequest.find({}).populate("user").populate("service").exec();
 		res.status(200).send(enquires);
 	} catch (error) {
 		console.error(`Error while fetching enquires. Details : ${error}`);

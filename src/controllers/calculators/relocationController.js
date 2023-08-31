@@ -77,7 +77,7 @@ export const relocationCalc = async (req, res, next) => {
 
 		if (Boolean(total)) {
 			await EstimateRequest.findOneAndUpdate(
-				{service: serviceId},
+				{service: serviceId, user: userId},
 				{estimatedCost: total, isEstimationSuccess: true},
 				{new: true}
 			);
