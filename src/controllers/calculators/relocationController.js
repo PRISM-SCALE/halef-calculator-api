@@ -2,7 +2,7 @@ import HouseType from "../../models/houseType.js";
 import Vehicle from "../../models/vehicle.js";
 import RelocationPackageCost from "../../models/relocationPackageCost.js";
 import RelocationTransportCost from "../../models/relocationTransportCost.js";
-import Enquires from "../../models/Enquires.js";
+import EstimateRequest from "../../models/EstimateRequest.js";
 
 export const relocationCalc = async (req, res, next) => {
 	try {
@@ -17,12 +17,19 @@ export const relocationCalc = async (req, res, next) => {
 			serviceId,
 		} = req.body;
 
-		const createNewEnquires = await Enquires.create({
+		// const createNewEnquires = await Enquires.create({
+		// 	user: userId,
+		// 	interests: {service: serviceId},
+		// });
+
+		// createNewEnquires.save();
+
+		const createNewEstimateRequest = await EstimateRequest.create({
+			service: serviceId,
 			user: userId,
-			interests: {service: serviceId},
 		});
 
-		createNewEnquires.save();
+		createNewEstimateRequest.save();
 
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 
@@ -67,6 +74,14 @@ export const relocationCalc = async (req, res, next) => {
 		const packageCost = packageCostMap?.cost;
 
 		const total = insurance + transportCost + packageCost;
+
+		if (Boolean(total)) {
+			await EstimateRequest.findOneAndUpdate(
+				{service: serviceId},
+				{estimatedCost: total, isEstimationSuccess: true},
+				{new: true}
+			);
+		}
 
 		if (packageCostMap?.packageType?.code === "NONE") {
 			return res.send({

@@ -1,4 +1,4 @@
-import Enquires from "../../models/Enquires.js";
+import EstimateRequest from "../../models/EstimateRequest.js";
 import CourierCargoCost from "../../models/courierCargoCost.js";
 
 export const courierCargoCalc = async (req, res, next) => {
@@ -17,12 +17,19 @@ export const courierCargoCalc = async (req, res, next) => {
 			serviceId,
 		} = req.body;
 
-		const createNewEnquires = await Enquires.create({
+		// const createNewEnquires = await Enquires.create({
+		// 	user: userId,
+		// 	interests: [{service: serviceId}],
+		// });
+
+		// createNewEnquires.save();
+
+		const createNewEstimateRequest = await EstimateRequest.create({
+			service: serviceId,
 			user: userId,
-			interests: [{service: serviceId}],
 		});
 
-		createNewEnquires.save();
+		createNewEstimateRequest.save();
 
 		console.log("CARRIER CODE", carrierCode);
 
@@ -52,6 +59,14 @@ export const courierCargoCalc = async (req, res, next) => {
 		}
 
 		const total = transportCost * weight;
+
+		if (Boolean(total)) {
+			await EstimateRequest.findOneAndUpdate(
+				{service: serviceId},
+				{estimatedCost: total, isEstimationSuccess: true},
+				{new: true}
+			);
+		}
 
 		// RESPONSE DATA
 		// return res.send({ currency: "INR", transportCost, total, volumetricWeight, carrierCode });

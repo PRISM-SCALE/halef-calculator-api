@@ -15,6 +15,7 @@ import airAmbulanceAirportCitiesRouter from "./airAmbulanceAirportCitiesRoute.js
 import OTPRouter from "./OTPRoute.js";
 import UserRouter from "./UserRoute.js";
 import EnquiresRouter from "./enquiresRoute.js";
+import EstimatedRequestsRouter from "./estimatedRequestRoute.js";
 
 const router = express.Router();
 
@@ -29,6 +30,7 @@ router.use("/calculate", calculatorRoute);
 router.use("/otp", OTPRouter);
 router.use("/user", UserRouter);
 router.use("/enquires", EnquiresRouter);
+router.use("/estimatedrequests", EstimatedRequestsRouter);
 
 //*****************DO NOT DELETE BELOW ROUTES*******************
 router.use("/reloctransportcost", relocationTransportCostRouter);
