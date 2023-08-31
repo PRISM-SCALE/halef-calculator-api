@@ -6,7 +6,7 @@ export const EnquiresSchema = new Schema(
 			service: {
 				type: Schema.Types.ObjectId,
 				required: true,
-				ref: "Service",
+				ref: "service",
 			},
 			count: {
 				type: Number,
@@ -17,7 +17,7 @@ export const EnquiresSchema = new Schema(
 		user: {
 			type: Schema.Types.ObjectId,
 			required: true,
-			ref: "User",
+			ref: "user",
 		},
 	},
 	{timestamps: true}
