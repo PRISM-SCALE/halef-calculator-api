@@ -40,7 +40,7 @@ const calculateCost = async (cityCombinationType, weight, packingCost, serviceId
 		return res.send({
 			currency: "INR",
 			cityCombinationType,
-			airAmbulanceCost: [
+			costData: [
 				{name: "RATE/KG", cost: perKgCost, unit: "₹"},
 				{name: "PACKING", cost: packingCost, unit: "₹"},
 				{name: "TOTAL", cost: total, unit: "₹"},
