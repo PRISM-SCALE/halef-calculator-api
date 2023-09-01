@@ -1,16 +1,23 @@
-import Enquires from "../../models/Enquires.js";
+import EstimateRequest from "../../models/EstimateRequest.js";
 import TruckingTransportCost from "../../models/truckingTransportCost.js";
 
 export const truckingCalc = async (req, res, next) => {
 	try {
 		const {distance, vehicle, userId, serviceId} = req.body;
 
-		const createNewEnquires = await Enquires.create({
+		// const createNewEnquires = await Enquires.create({
+		// 	user: userId,
+		// 	interests: [{service: serviceId}],
+		// });
+
+		// createNewEnquires.save();
+
+		const createNewEstimateRequest = await EstimateRequest.create({
+			service: serviceId,
 			user: userId,
-			interests: [{service: serviceId}],
 		});
 
-		createNewEnquires.save();
+		createNewEstimateRequest.save();
 
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 
@@ -30,6 +37,14 @@ export const truckingCalc = async (req, res, next) => {
 		const transportCost = transportCostMap?.cost;
 
 		const total = transportCost * distance;
+
+		if (Boolean(total)) {
+			await EstimateRequest.findOneAndUpdate(
+				{service: serviceId, userId: userId},
+				{estimatedCost: total, isEstimationSuccess: true},
+				{new: true}
+			);
+		}
 
 		// return res.send({currency: "INR", transportCost, total});
 		return res.send({

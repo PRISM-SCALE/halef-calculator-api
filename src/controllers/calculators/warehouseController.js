@@ -1,4 +1,4 @@
-import Enquires from "../../models/Enquires.js";
+import EstimateRequest from "../../models/EstimateRequest.js";
 import WarehousePackageCost from "../../models/warehousePackageCost.js";
 import WarehouseStorageCost from "../../models/warehouseStorageCost.js";
 
@@ -6,12 +6,19 @@ export const warehouseCalc = async (req, res, next) => {
 	try {
 		const {cft, packageType, durationInDays, userId, serviceId} = req.body;
 
-		const createNewEnquires = await Enquires.create({
+		// const createNewEnquires = await Enquires.create({
+		// 	user: userId,
+		// 	interests: [{service: serviceId}],
+		// });
+
+		// createNewEnquires.save();
+
+		const createNewEstimateRequest = await EstimateRequest.create({
+			service: serviceId,
 			user: userId,
-			interests: [{service: serviceId}],
 		});
 
-		createNewEnquires.save();
+		createNewEstimateRequest.save();
 
 		if (Number(cft) > 2000) {
 			return res.send({message: "Thank you we will ge back"});
@@ -38,6 +45,14 @@ export const warehouseCalc = async (req, res, next) => {
 			const packageCost = packageCostMap?.cost * cft;
 
 			const total = storageCost + packageCost;
+
+			if (Boolean(total)) {
+				await EstimateRequest.findOneAndUpdate(
+					{service: serviceId, userId: userId},
+					{estimatedCost: total, isEstimationSuccess: true},
+					{new: true}
+				);
+			}
 
 			// return res.send({currency: "INR", storageCost, packageCost, total});
 

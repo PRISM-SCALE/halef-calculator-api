@@ -1,7 +1,8 @@
 import Enquires from "../../models/Enquires.js";
+import EstimateRequest from "../../models/EstimateRequest.js";
 import AirAmbulanceCost from "../../models/airAmbulanceCost.js";
 
-const calculateCost = async (cityCombinationType, weight, packingCost, res) => {
+const calculateCost = async (cityCombinationType, weight, packingCost, serviceId, userId, res) => {
 	const airAmbulanceCostMap = await AirAmbulanceCost.findOne({cityCombinationType})
 		.where("minWeight")
 		.lte(Number(weight))
@@ -15,6 +16,14 @@ const calculateCost = async (cityCombinationType, weight, packingCost, res) => {
 	// ----------------------------------------------------------
 	if (weight <= 130) {
 		const total = perKgCost * 130 + packingCost;
+
+		if (Boolean(total)) {
+			await EstimateRequest.findOneAndUpdate(
+				{service: serviceId, userId: userId},
+				{estimatedCost: total, isEstimationSuccess: true},
+				{new: true}
+			);
+		}
 
 		return res.send({
 			currency: "INR",
@@ -45,12 +54,19 @@ export const airAmbulanceCalc = async (req, res, next) => {
 	try {
 		const {weight, sourceCity, destinationCity, isPackingRequired, userId, serviceId} = req.body;
 
-		const createNewEnquires = await Enquires.create({
+		// const createNewEnquires = await Enquires.create({
+		// 	user: userId,
+		// 	interests: [{service: serviceId}],
+		// });
+
+		// createNewEnquires.save();
+
+		const createNewEstimateRequest = await EstimateRequest.create({
+			service: serviceId,
 			user: userId,
-			interests: [{service: serviceId}],
 		});
 
-		createNewEnquires.save();
+		createNewEstimateRequest.save();
 
 		const airportCities = [
 			"Ahmedabad",
@@ -99,17 +115,17 @@ export const airAmbulanceCalc = async (req, res, next) => {
 		if (isSourceAirportCity && isDestinationAirportCity) {
 			cityCombinationType = "port";
 
-			calculateCost(cityCombinationType, weight, packingCost, res);
+			calculateCost(cityCombinationType, weight, packingCost, serviceId, userId, res);
 			cityCombinationType = "";
 		} else if (
 			(!isSourceAirportCity && isDestinationAirportCity) ||
 			(isSourceAirportCity && !isDestinationAirportCity)
 		) {
 			cityCombinationType = "mixed";
-			calculateCost(cityCombinationType, weight, packingCost, res);
+			calculateCost(cityCombinationType, weight, packingCost, serviceId, userId, res);
 		} else {
 			cityCombinationType = "non_port";
-			calculateCost(cityCombinationType, weight, packingCost, res);
+			calculateCost(cityCombinationType, weight, packingCost, serviceId, userId, res);
 		}
 	} catch (error) {
 		console.error(`Error while Calculating air ambulance price`);

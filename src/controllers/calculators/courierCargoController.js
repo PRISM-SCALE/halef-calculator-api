@@ -24,6 +24,8 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		// createNewEnquires.save();
 
+		console.log(req.body);
+
 		const createNewEstimateRequest = await EstimateRequest.create({
 			service: serviceId,
 			user: userId,
@@ -62,7 +64,7 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		if (Boolean(total)) {
 			await EstimateRequest.findOneAndUpdate(
-				{service: serviceId},
+				{service: serviceId, userId: userId},
 				{estimatedCost: total, isEstimationSuccess: true},
 				{new: true}
 			);
