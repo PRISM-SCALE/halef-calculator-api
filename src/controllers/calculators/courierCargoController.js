@@ -62,13 +62,10 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		const total = transportCost * weight;
 
-		if (Boolean(total)) {
-			await EstimateRequest.findOneAndUpdate(
-				{service: serviceId, userId: userId},
-				{estimatedCost: total, isEstimationSuccess: true},
-				{new: true}
-			);
-		}
+		createNewEstimateRequest.estimatedCost = total;
+		createNewEstimateRequest.isEstimationSuccess = true;
+
+		createNewEstimateRequest.save();
 
 		// RESPONSE DATA
 		// return res.send({ currency: "INR", transportCost, total, volumetricWeight, carrierCode });

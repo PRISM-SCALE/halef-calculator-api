@@ -2,7 +2,13 @@ import Enquires from "../../models/Enquires.js";
 import EstimateRequest from "../../models/EstimateRequest.js";
 import AirAmbulanceCost from "../../models/airAmbulanceCost.js";
 
-const calculateCost = async (cityCombinationType, weight, packingCost, serviceId, userId, res) => {
+const calculateCost = async (
+	cityCombinationType,
+	weight,
+	packingCost,
+	createNewEstimateRequest,
+	res
+) => {
 	const airAmbulanceCostMap = await AirAmbulanceCost.findOne({cityCombinationType})
 		.where("minWeight")
 		.lte(Number(weight))
@@ -17,13 +23,10 @@ const calculateCost = async (cityCombinationType, weight, packingCost, serviceId
 	if (weight <= 130) {
 		const total = perKgCost * 130 + packingCost;
 
-		if (Boolean(total)) {
-			await EstimateRequest.findOneAndUpdate(
-				{service: serviceId, userId: userId},
-				{estimatedCost: total, isEstimationSuccess: true},
-				{new: true}
-			);
-		}
+		createNewEstimateRequest.estimatedCost = total;
+		createNewEstimateRequest.isEstimationSuccess = true;
+
+		createNewEstimateRequest.save();
 
 		return res.send({
 			currency: "INR",
@@ -36,6 +39,11 @@ const calculateCost = async (cityCombinationType, weight, packingCost, serviceId
 		});
 	} else {
 		const total = perKgCost * weight + packingCost;
+
+		createNewEstimateRequest.estimatedCost = total;
+		createNewEstimateRequest.isEstimationSuccess = true;
+
+		createNewEstimateRequest.save();
 
 		return res.send({
 			currency: "INR",
@@ -115,17 +123,17 @@ export const airAmbulanceCalc = async (req, res, next) => {
 		if (isSourceAirportCity && isDestinationAirportCity) {
 			cityCombinationType = "port";
 
-			calculateCost(cityCombinationType, weight, packingCost, serviceId, userId, res);
+			calculateCost(cityCombinationType, weight, packingCost, createNewEstimateRequest, res);
 			cityCombinationType = "";
 		} else if (
 			(!isSourceAirportCity && isDestinationAirportCity) ||
 			(isSourceAirportCity && !isDestinationAirportCity)
 		) {
 			cityCombinationType = "mixed";
-			calculateCost(cityCombinationType, weight, packingCost, serviceId, userId, res);
+			calculateCost(cityCombinationType, weight, packingCost, createNewEstimateRequest, res);
 		} else {
 			cityCombinationType = "non_port";
-			calculateCost(cityCombinationType, weight, packingCost, serviceId, userId, res);
+			calculateCost(cityCombinationType, weight, packingCost, createNewEstimateRequest, res);
 		}
 	} catch (error) {
 		console.error(`Error while Calculating air ambulance price`);

@@ -75,13 +75,10 @@ export const relocationCalc = async (req, res, next) => {
 
 		const total = insurance + transportCost + packageCost;
 
-		if (Boolean(total)) {
-			await EstimateRequest.findOneAndUpdate(
-				{service: serviceId, user: userId},
-				{estimatedCost: total, isEstimationSuccess: true},
-				{new: true}
-			);
-		}
+		createNewEstimateRequest.estimatedCost = total;
+		createNewEstimateRequest.isEstimationSuccess = true;
+
+		createNewEstimateRequest.save();
 
 		if (packageCostMap?.packageType?.code === "NONE") {
 			return res.send({

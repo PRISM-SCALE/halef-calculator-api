@@ -38,13 +38,10 @@ export const truckingCalc = async (req, res, next) => {
 
 		const total = transportCost * distance;
 
-		if (Boolean(total)) {
-			await EstimateRequest.findOneAndUpdate(
-				{service: serviceId, userId: userId},
-				{estimatedCost: total, isEstimationSuccess: true},
-				{new: true}
-			);
-		}
+		createNewEstimateRequest.estimatedCost = total;
+		createNewEstimateRequest.isEstimationSuccess = true;
+
+		createNewEstimateRequest.save();
 
 		// return res.send({currency: "INR", transportCost, total});
 		return res.send({
