@@ -1,5 +1,4 @@
 import mongoose, {Schema} from "mongoose";
-import {VehicleSchema} from "./vehicle.js";
 
 export const HouseTypeSchema = new Schema(
 	{

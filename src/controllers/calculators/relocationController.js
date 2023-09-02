@@ -66,43 +66,53 @@ export const relocationCalc = async (req, res, next) => {
 			return res.status(500).send({error: "Error calculating transport cost"});
 		const transportCost = transportCostMap?.cost;
 
-		const packageCostMap = await RelocationPackageCost.findOne({packageType, houseType}).populate(
-			"packageType"
-		);
-		if (!Boolean(packageCostMap))
-			return res.status(500).send({error: "Error calculating package cost"});
-		const packageCost = packageCostMap?.cost;
+		if (transportCost !== 0) {
+			const packageCostMap = await RelocationPackageCost.findOne({packageType, houseType}).populate(
+				"packageType"
+			);
 
-		const total = insurance + transportCost + packageCost;
+			if (!Boolean(packageCostMap))
+				return res.status(500).send({error: "Error calculating package cost"});
+			const packageCost = packageCostMap?.cost;
 
-		createNewEstimateRequest.estimatedCost = total;
-		createNewEstimateRequest.isEstimationSuccess = true;
+			const total = insurance + transportCost + packageCost;
 
-		createNewEstimateRequest.save();
+			createNewEstimateRequest.estimatedCost = total;
+			createNewEstimateRequest.isEstimationSuccess = true;
 
-		if (packageCostMap?.packageType?.code === "NONE") {
-			return res.send({
-				image: vehicleImage,
-				name: vehicleName,
-				currency: "INR",
-				costData: [
-					{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
-					{name: "HANDLING COST", cost: packageCost, unit: "₹"},
-					{name: "INSURANCE", cost: insurance, unit: "₹"},
-					{name: "TOTAL", cost: total, unit: "₹"},
-				],
-			});
+			createNewEstimateRequest.save();
+
+			if (packageCostMap?.packageType?.code === "NONE") {
+				return res.send({
+					image: vehicleImage,
+					name: vehicleName,
+					currency: "INR",
+					costData: [
+						{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+						{name: "HANDLING COST", cost: packageCost, unit: "₹"},
+						{name: "INSURANCE", cost: insurance, unit: "₹"},
+						{name: "TOTAL", cost: total, unit: "₹"},
+					],
+				});
+			} else {
+				return res.send({
+					image: vehicleImage,
+					name: vehicleName,
+					currency: "INR",
+					costData: [
+						{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
+						{name: "PACKAGING COST", cost: packageCost, unit: "₹"},
+						{name: "INSURANCE", cost: insurance, unit: "₹"},
+						{name: "TOTAL", cost: total, unit: "₹"},
+					],
+				});
+			}
 		} else {
 			return res.send({
 				image: vehicleImage,
 				name: vehicleName,
-				currency: "INR",
-				costData: [
-					{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
-					{name: "PACKAGING COST", cost: packageCost, unit: "₹"},
-					{name: "INSURANCE", cost: insurance, unit: "₹"},
-					{name: "TOTAL", cost: total, unit: "₹"},
-				],
+				isError: true,
+				message: `The Vehicle ${vehicleName} is not allowed, please try other vehicle options`,
 			});
 		}
 	} catch (error) {

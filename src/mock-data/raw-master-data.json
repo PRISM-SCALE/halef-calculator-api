@@ -176,109 +176,109 @@
 	],
 	"relocation_travel_cost": [
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 0,
 			"maxDistance": 10,
 			"cost": 2500
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 11,
 			"maxDistance": 20,
 			"cost": 3000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 21,
 			"maxDistance": 30,
 			"cost": 3500
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 31,
 			"maxDistance": 40,
 			"cost": 4000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 41,
 			"maxDistance": 50,
 			"cost": 5000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 51,
 			"maxDistance": 100,
 			"cost": 6000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 101,
 			"maxDistance": 200,
 			"cost": 10000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 201,
 			"maxDistance": 300,
 			"cost": 12500
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 301,
 			"maxDistance": 400,
 			"cost": 15000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 401,
 			"maxDistance": 500,
 			"cost": 17500
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 501,
 			"maxDistance": 750,
 			"cost": 20000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 751,
 			"maxDistance": 1000,
 			"cost": 25000
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 1001,
 			"maxDistance": 1250,
 			"cost": 0
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 1251,
 			"maxDistance": 1500,
 			"cost": 0
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 1501,
 			"maxDistance": 1750,
 			"cost": 0
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 1751,
 			"maxDistance": 2200,
 			"cost": 0
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 2201,
 			"maxDistance": 2500,
 			"cost": 0
 		},
 		{
-			"vehicle": "TATA  ACE",
+			"vehicle": "TATA ACE",
 			"minDistance": 2501,
 			"maxDistance": 3000,
 			"cost": 0
