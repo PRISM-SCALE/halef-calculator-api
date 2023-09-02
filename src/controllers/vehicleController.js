@@ -59,7 +59,7 @@ export const addVehicle = async (req, res, next) => {
 export const removeVehicle = async (req, res, next) => {
 	const {id} = req.params;
 	try {
-		const vehicle = await Vehicle.deleteOne({_id: id});
+		const vehicle = await Vehicle.findOneAndUpdate({_id: id}, {isActive: false}, {new: true});
 		res.status(200).send(vehicle);
 	} catch (error) {
 		console.error(`Error while deleting vehicle. Details : ${error}`);
