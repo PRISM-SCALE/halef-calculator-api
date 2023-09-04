@@ -28,14 +28,19 @@ export const warehouseCalc = async (req, res, next) => {
 
 			const storageCostMap = await WarehouseStorageCost.findOne({cft})
 				.where("minDays")
-				.lt(Number(durationInDays))
+				.lte(Number(durationInDays))
 				.where("maxDays")
-				.gt(Number(durationInDays))
+				.gte(Number(durationInDays))
 				.exec();
 
+			console.log("storageCostMap", storageCostMap);
+
 			if (!Boolean(storageCostMap))
-				return res.status(500).send({error: "Error calculating transport cost"});
+				return res.status(500).send({error: "Error calculating storage cost"});
+
 			const storageCost = storageCostMap?.cost * cft;
+
+			console.log("storageCost", storageCost);
 
 			const packageCostMap = await WarehousePackageCost.findOne({packageType}).populate(
 				"packageType"
