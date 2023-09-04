@@ -74,7 +74,8 @@ export const airAmbulanceCalc = async (req, res, next) => {
 			user: userId,
 		});
 
-		createNewEstimateRequest.save();
+		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?
+		// createNewEstimateRequest.save();
 
 		const airportCities = [
 			"Ahmedabad",
