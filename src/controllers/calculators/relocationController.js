@@ -29,7 +29,8 @@ export const relocationCalc = async (req, res, next) => {
 			user: userId,
 		});
 
-		createNewEstimateRequest.save();
+		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?
+		// createNewEstimateRequest.save();
 
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 

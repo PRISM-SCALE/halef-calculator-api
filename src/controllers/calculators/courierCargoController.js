@@ -65,7 +65,8 @@ export const courierCargoCalc = async (req, res, next) => {
 		createNewEstimateRequest.estimatedCost = total;
 		createNewEstimateRequest.isEstimationSuccess = true;
 
-		createNewEstimateRequest.save();
+		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?
+		// createNewEstimateRequest.save();
 
 		// RESPONSE DATA
 		// return res.send({ currency: "INR", transportCost, total, volumetricWeight, carrierCode });
