@@ -38,23 +38,30 @@ export const truckingCalc = async (req, res, next) => {
 
 		const transportCost = transportCostMap?.cost;
 
-		const total = transportCost * distance;
+		if (transportCost !== 0) {
+			const total = transportCost * distance;
 
-		createNewEstimateRequest.estimatedCost = total;
-		createNewEstimateRequest.isEstimationSuccess = true;
+			createNewEstimateRequest.estimatedCost = total;
+			createNewEstimateRequest.isEstimationSuccess = true;
 
-		createNewEstimateRequest.save();
+			createNewEstimateRequest.save();
 
-		// return res.send({currency: "INR", transportCost, total});
-		return res.send({
-			image: "",
-			name: "TRUCKING",
-			currency: "INR",
-			costData: [
-				{name: "TRANSPORT COST", cost: transportCost, unit: "₹"},
-				{name: "TOTAL", cost: total, unit: "₹"},
-			],
-		});
+			// return res.send({currency: "INR", transportCost, total});
+			return res.send({
+				image: "",
+				name: "TRUCKING",
+				currency: "INR",
+				costData: [
+					{name: "TRANSPORT COST/KM", cost: transportCost, unit: "₹"},
+					{name: "TOTAL", cost: total, unit: "₹"},
+				],
+			});
+		} else {
+			return res.send({
+				isError: true,
+				message: `The Vehicle ${vehicle} is not allowed, please try other vehicle options`,
+			});
+		}
 	} catch (error) {
 		console.error(`Error while Calculating trucking price`);
 		console.log(error);

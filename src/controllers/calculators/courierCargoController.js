@@ -25,7 +25,7 @@ export const courierCargoCalc = async (req, res, next) => {
 
 		// createNewEnquires.save();
 
-		console.log(req.body);
+		console.log(estimates);
 
 		const createNewEstimateRequest = await EstimateRequest.create({
 			service: serviceId,
