@@ -18,7 +18,8 @@ export const warehouseCalc = async (req, res, next) => {
 			user: userId,
 		});
 
-		createNewEstimateRequest.save();
+		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?
+		// createNewEstimateRequest.save();
 
 		if (Number(cft) > 2000) {
 			return res.send({message: "Thank you we will ge back"});
@@ -54,8 +55,7 @@ export const warehouseCalc = async (req, res, next) => {
 			createNewEstimateRequest.estimatedCost = total;
 			createNewEstimateRequest.isEstimationSuccess = true;
 
-			// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?
-			// createNewEstimateRequest.save();
+			createNewEstimateRequest.save();
 
 			// return res.send({currency: "INR", storageCost, packageCost, total});
 
