@@ -15,6 +15,7 @@ export const relocationCalc = async (req, res, next) => {
 			goodsValue,
 			userId,
 			serviceId,
+			estimates,
 		} = req.body;
 
 		// const createNewEnquires = await Enquires.create({
@@ -27,6 +28,7 @@ export const relocationCalc = async (req, res, next) => {
 		const createNewEstimateRequest = await EstimateRequest.create({
 			service: serviceId,
 			user: userId,
+			estimates,
 		});
 
 		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?

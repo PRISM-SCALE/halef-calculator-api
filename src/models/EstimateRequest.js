@@ -23,6 +23,9 @@ export const EstimateRequestSchema = new Schema(
 		error: {
 			type: String,
 		},
+		estimates: {
+			type: String,
+		},
 	},
 	{timestamps: true}
 );

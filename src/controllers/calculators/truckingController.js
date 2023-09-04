@@ -3,7 +3,7 @@ import TruckingTransportCost from "../../models/truckingTransportCost.js";
 
 export const truckingCalc = async (req, res, next) => {
 	try {
-		const {distance, vehicle, userId, serviceId, isDifferentState} = req.body;
+		const {distance, vehicle, userId, serviceId, isDifferentState, estimates} = req.body;
 
 		// const createNewEnquires = await Enquires.create({
 		// 	user: userId,
@@ -15,6 +15,7 @@ export const truckingCalc = async (req, res, next) => {
 		const createNewEstimateRequest = await EstimateRequest.create({
 			service: serviceId,
 			user: userId,
+			estimates,
 		});
 
 		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?
