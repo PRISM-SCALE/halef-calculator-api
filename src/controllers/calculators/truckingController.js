@@ -3,7 +3,7 @@ import TruckingTransportCost from "../../models/truckingTransportCost.js";
 
 export const truckingCalc = async (req, res, next) => {
 	try {
-		const {distance, vehicle, userId, serviceId} = req.body;
+		const {distance, vehicle, userId, serviceId, isDifferentState} = req.body;
 
 		// const createNewEnquires = await Enquires.create({
 		// 	user: userId,

@@ -3,6 +3,8 @@ import VehicleRange from "../models/VehicleRange.js";
 export const getAllVehicleRanges = async (req, res, next) => {
 	try {
 		const vehicleRange = await VehicleRange.find({}).populate("allowedVehicles");
+
+
 		res.status(200).send(vehicleRange);
 	} catch (error) {
 		console.error(`Error while fetching vehicle ranges. Details : ${error}`);

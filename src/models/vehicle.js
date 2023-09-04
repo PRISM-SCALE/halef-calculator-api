@@ -7,6 +7,7 @@ export const VehicleSchema = new Schema(
 		width: {type: Number, required: true},
 		height: {type: Number, required: true},
 		isActive: {type: Boolean, default: true},
+		isInterStateAllowed: {type: Boolean, default: true},
 		imageUrl: String,
 	},
 	{timestamps: true}
