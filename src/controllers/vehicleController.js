@@ -43,9 +43,29 @@ export const updateVehicle = async (req, res, next) => {
 };
 
 export const addVehicle = async (req, res, next) => {
-	const {name, length, width, height, imageUrl} = req.body;
+	const {
+		name,
+		length,
+		width,
+		height,
+		imageUrl,
+		isInterStateAllowed,
+		relocationRange,
+		truckingRange,
+		sort
+	} = req.body;
 	try {
-		const vehicle = await Vehicle.create({name, length, width, height, imageUrl});
+		const vehicle = await Vehicle.create({
+			name,
+			length,
+			width,
+			height,
+			imageUrl,
+			isInterStateAllowed,
+			relocationRange,
+			truckingRange,
+			sort
+		});
 		res.status(200).send(vehicle);
 	} catch (error) {
 		console.error(`Error while creating vehicle. Details : ${error}`);

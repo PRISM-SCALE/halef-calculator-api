@@ -23,6 +23,8 @@ export const truckingCalc = async (req, res, next) => {
 
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 
+		console.log("VEHICLE", vehicle);
+
 		const transportCostMap = await TruckingTransportCost.findOne({vehicle})
 			.where("minDistance")
 			.lt(Number(distance))
@@ -30,38 +32,30 @@ export const truckingCalc = async (req, res, next) => {
 			.gt(Number(distance))
 			.exec();
 
-		console.log(vehicle, distance);
-		console.log(transportCostMap?.vehicle);
+		console.log("transportCostMap", transportCostMap);
 
 		if (!Boolean(transportCostMap))
 			return res.status(500).send({error: "Error calculating transport cost"});
 
 		const transportCost = transportCostMap?.cost;
 
-		if (transportCost !== 0) {
-			const total = transportCost * distance;
+		const total = transportCost * distance;
 
-			createNewEstimateRequest.estimatedCost = total;
-			createNewEstimateRequest.isEstimationSuccess = true;
+		createNewEstimateRequest.estimatedCost = total;
+		createNewEstimateRequest.isEstimationSuccess = true;
 
-			createNewEstimateRequest.save();
+		createNewEstimateRequest.save();
 
-			// return res.send({currency: "INR", transportCost, total});
-			return res.send({
-				image: "",
-				name: "TRUCKING",
-				currency: "INR",
-				costData: [
-					{name: "TRANSPORT COST/KM", cost: transportCost, unit: "₹"},
-					{name: "TOTAL", cost: total, unit: "₹"},
-				],
-			});
-		} else {
-			return res.send({
-				isError: true,
-				message: `The Vehicle ${vehicle} is not allowed, please try other vehicle options`,
-			});
-		}
+		// return res.send({currency: "INR", transportCost, total});
+		return res.send({
+			image: "",
+			name: "TRUCKING",
+			currency: "INR",
+			costData: [
+				{name: "TRANSPORT COST/KM", cost: transportCost, unit: "₹"},
+				{name: "TOTAL", cost: total, unit: "₹"},
+			],
+		});
 	} catch (error) {
 		console.error(`Error while Calculating trucking price`);
 		console.log(error);

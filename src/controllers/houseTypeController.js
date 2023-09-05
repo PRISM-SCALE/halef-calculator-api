@@ -14,7 +14,7 @@ export const getAllHouseTypes = async (req, res, next) => {
 };
 
 export const addHouseType = async (req, res, next) => {
-	const {type, allowedVehicles, allowedRanges, isHouseTypeInDistanceRange} = req.body;
+	const {type, allowedVehicles} = req.body;
 	try {
 		const houseType = await HouseType.create({
 			type,

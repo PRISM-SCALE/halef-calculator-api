@@ -2,8 +2,7 @@ import VehicleRange from "../models/VehicleRange.js";
 
 export const getAllVehicleRanges = async (req, res, next) => {
 	try {
-		const vehicleRange = await VehicleRange.find({}).populate("allowedVehicles");
-
+		const vehicleRange = await VehicleRange.find({}).populate("vehicle");
 
 		res.status(200).send(vehicleRange);
 	} catch (error) {
@@ -16,9 +15,9 @@ export const getAllVehicleRanges = async (req, res, next) => {
 };
 
 export const addVehicleRanges = async (req, res, next) => {
-	const {minDistance, maxDistance, allowedVehicles} = req.body;
+	const {relocation, trucking} = req.body;
 	try {
-		const vehicleRange = await VehicleRange.create({minDistance, maxDistance, allowedVehicles});
+		const vehicleRange = await VehicleRange.create({relocation, trucking});
 		res.status(200).send(vehicleRange);
 	} catch (error) {
 		console.error(`Error while creating vehicle range. Details : ${error}`);

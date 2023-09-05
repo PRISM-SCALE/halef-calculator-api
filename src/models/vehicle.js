@@ -8,7 +8,10 @@ export const VehicleSchema = new Schema(
 		height: {type: Number, required: true},
 		isActive: {type: Boolean, default: true},
 		isInterStateAllowed: {type: Boolean, default: true},
+		sort: {type: Number, required: true, default: 0},
 		imageUrl: String,
+		relocationRange: [{minDistance: Number, maxDistance: Number}],
+		truckingRange: [{minDistance: Number, maxDistance: Number}],
 	},
 	{timestamps: true}
 );
