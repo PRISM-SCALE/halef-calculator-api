@@ -39,7 +39,7 @@ export const relocationCalc = async (req, res, next) => {
 		const houseTypeObj = await HouseType.findOne({_id: houseType}).populate("allowedVehicles");
 		if (!Boolean(houseTypeObj)) return res.status(400).send({error: `INVALID house type`});
 
-		const isVehicleAllowed = houseTypeObj.allowedVehicles.some((v) => v.id === vehicle);
+		const isVehicleAllowed = houseTypeObj.allowedVehicles.some((v) => v.id === vehicle?._id);
 
 		if (!Boolean(isVehicleAllowed))
 			return res
@@ -47,7 +47,7 @@ export const relocationCalc = async (req, res, next) => {
 				.send({error: `the requested vehicle is NOT allowed for the selected HOUSE TYPE`});
 
 		// to get the vehicle image
-		const vehicleTypeObj = await Vehicle.findOne({_id: vehicle});
+		const vehicleTypeObj = await Vehicle.findOne({_id: vehicle?._id});
 		const vehicleImage = vehicleTypeObj.imageUrl;
 		const vehicleName = vehicleTypeObj.name;
 
@@ -60,9 +60,9 @@ export const relocationCalc = async (req, res, next) => {
 
 		const transportCostMap = await RelocationTransportCost.findOne({vehicle})
 			.where("minDistance")
-			.lt(Number(distance))
+			.lte(Number(distance))
 			.where("maxDistance")
-			.gt(Number(distance))
+			.gte(Number(distance))
 			.exec();
 
 		if (!Boolean(transportCostMap))

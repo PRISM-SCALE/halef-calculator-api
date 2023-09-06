@@ -23,13 +23,13 @@ export const truckingCalc = async (req, res, next) => {
 
 		if (isNaN(distance)) return res.status(400).send({error: `distance MUST be a number!`});
 
-		console.log("VEHICLE", vehicle);
+		console.log("vehicle", vehicle);
 
 		const transportCostMap = await TruckingTransportCost.findOne({vehicle})
 			.where("minDistance")
-			.lt(Number(distance))
+			.lte(Number(distance))
 			.where("maxDistance")
-			.gt(Number(distance))
+			.gte(Number(distance))
 			.exec();
 
 		console.log("transportCostMap", transportCostMap);
