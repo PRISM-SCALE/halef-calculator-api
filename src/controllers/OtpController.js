@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import twilio from "twilio";
 
 import User from "../models/User.js";
+import Payment from "../models/Payment.js";
 
 // ! DO NOT REMOVE, ENV FILE NOT READ IF THE dotenv.config() IF NOT PROVIDED
 dotenv.config();
@@ -42,7 +43,49 @@ export const reSendOTP = async (req, res) => {
 	}
 };
 
-export const verifyToken = async (req, res) => {
+export const verifyPaymentToken = async (req, res) => {
+	try {
+		const {phone, code} = req.body;
+		const verification_check = await client.verify.v2
+			.services(serviceSid)
+			.verificationChecks.create({to: `+91${phone}`, code: code});
+
+		console.log("DATA", phone, code);
+
+		console.log(verification_check?.status);
+
+		if (verification_check?.status === "approved") {
+			const paymentData = await Payment.findOneAndUpdate(
+				{phone},
+				{isPhoneVerified: true},
+				{new: true}
+			);
+
+			if (!paymentData) {
+				return res.status(500).send({
+					error: "payment data not found",
+				});
+			}
+
+			return res.status(200).send({
+				message: "You have been successfully verified",
+				paymentData,
+			});
+		}
+
+		return res.status(400).send({
+			error: "Please try again, your OTP was unable to be Verified",
+		});
+	} catch (error) {
+		console.log(error);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while creating Payment. Please try again later",
+		});
+	}
+};
+
+export const verifyUserToken = async (req, res) => {
 	try {
 		const {phone, code} = req.body;
 		const verification_check = await client.verify.v2

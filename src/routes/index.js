@@ -17,6 +17,7 @@ import OTPRouter from "./OTPRoute.js";
 import UserRouter from "./UserRoute.js";
 import EnquiresRouter from "./enquiresRoute.js";
 import EstimatedRequestsRouter from "./estimatedRequestRoute.js";
+import PaymentsRouter from "./paymentsRoute.js";
 
 const router = express.Router();
 
@@ -33,6 +34,7 @@ router.use("/otp", OTPRouter);
 router.use("/user", UserRouter);
 router.use("/enquires", EnquiresRouter);
 router.use("/estimatedrequests", EstimatedRequestsRouter);
+router.use("/payments", PaymentsRouter);
 
 //*****************DO NOT DELETE BELOW ROUTES*******************
 router.use("/reloctransportcost", relocationTransportCostRouter);

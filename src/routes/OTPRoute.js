@@ -1,11 +1,11 @@
 import express from "express";
-import {reSendOTP, verifyToken} from "../controllers/OtpController.js";
+import {reSendOTP, verifyUserToken, verifyPaymentToken} from "../controllers/OtpController.js";
 
 const router = express.Router();
-``;
 
 router.post("/resend", reSendOTP);
-router.post("/verify", verifyToken);
+router.post("/verify_user", verifyUserToken);
+router.post("/verify_payment", verifyPaymentToken);
 
 export default router;
 //airAmbulanceAirportCitiesRoute
