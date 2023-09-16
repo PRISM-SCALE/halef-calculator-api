@@ -26,6 +26,8 @@ export const EstimateRequestSchema = new Schema(
 		estimates: {
 			type: String,
 		},
+		isAttended: {type: Boolean, default: false},
+		isAttendedBy: {type: String, default: "Seshan A"},
 	},
 	{timestamps: true}
 );

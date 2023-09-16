@@ -3,6 +3,7 @@ import Vehicle from "../../models/vehicle.js";
 import RelocationPackageCost from "../../models/relocationPackageCost.js";
 import RelocationTransportCost from "../../models/relocationTransportCost.js";
 import EstimateRequest from "../../models/EstimateRequest.js";
+import PackageType from "../../models/packageType.js";
 
 export const relocationCalc = async (req, res, next) => {
 	try {
@@ -25,10 +26,21 @@ export const relocationCalc = async (req, res, next) => {
 
 		// createNewEnquires.save();
 
+		const parsedData = JSON.parse(estimates);
+		const houseCapacity = await HouseType.findOne({_id: parsedData?.houseCapacity});
+		const packing = await PackageType.findOne({_id: parsedData?.packing});
+		const newObj = {
+			...parsedData,
+			houseCapacity,
+			packing,
+		};
+
+		const stringifyNewObj = JSON.stringify(newObj);
+
 		const createNewEstimateRequest = await EstimateRequest.create({
 			service: serviceId,
 			user: userId,
-			estimates,
+			estimates: stringifyNewObj,
 		});
 
 		// Throws => ParallelSaveError: Can't save() the same doc multiple times in parallel?

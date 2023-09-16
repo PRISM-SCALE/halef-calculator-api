@@ -1,8 +1,9 @@
 import express from "express";
-import {getAllEstimates} from "../controllers/estimateRequestController.js";
+import {updateOneEstimate, getAllEstimates} from "../controllers/estimateRequestController.js";
 
 const router = express.Router();
 
 router.get("/", getAllEstimates);
+router.put("/:id", updateOneEstimate);
 
 export default router;
