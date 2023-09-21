@@ -12,11 +12,22 @@ export const addAirAmbulanceCost = async (req, res, next) => {
 		res.status(200).send(airAmbulanceCost);
 	} catch (error) {
 		console.error(`Error while creating airAmbulanceCost. Details : ${error}`);
-		res
-			.status(500)
-			.send({
-				error: "Internal Server Error",
-				message: "Error while adding airAmbulanceCost. Please try again later",
-			});
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while adding airAmbulanceCost. Please try again later",
+		});
+	}
+};
+
+export const getBulkAirAmbulanceCost = async (req, res, next) => {
+	try {
+		const airAmbulanceCost = await AirAmbulanceCost.find({});
+		res.status(200).send(airAmbulanceCost);
+	} catch (error) {
+		console.error(`Error while Fetching AirAmbulanceCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Fetching AirAmbulanceCost Details. Please try again later",
+		});
 	}
 };

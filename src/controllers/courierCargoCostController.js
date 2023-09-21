@@ -22,3 +22,16 @@ export const AddBulkCourierCargoTransportCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const getBulkCourierCargoTransportCost = async (req, res, next) => {
+	try {
+		const courierCargoTransportCost = await CourierCargoCost.find({});
+		res.status(200).send(courierCargoTransportCost);
+	} catch (error) {
+		console.error(`Error while Fetching CourierCargoCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Fetching CourierCargoCost Details. Please try again later",
+		});
+	}
+};

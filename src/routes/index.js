@@ -39,11 +39,11 @@ router.use("/payments", PaymentsRouter);
 //*****************DO NOT DELETE BELOW ROUTES*******************
 router.use("/reloctransportcost", relocationTransportCostRouter);
 router.use("/relocpackagecost", relocationPackageCostRouter);
-// router.use("/couriercargocost", courierCargoCostRouter);
-// router.use("/truckingcost", truckingTransportCostRouter);
-// router.use("/warehousepackagecost", warehousePackageCostRouter);
-// router.use("/warehousestoragecost", warehouseStorageCostRouter);
-// router.use("/airambulancecost", airAmbulanceCostRouter);
+router.use("/couriercargocost", courierCargoCostRouter);
+router.use("/truckingcost", truckingTransportCostRouter);
+router.use("/warehousepackagecost", warehousePackageCostRouter);
+router.use("/warehousestoragecost", warehouseStorageCostRouter);
+router.use("/airambulancecost", airAmbulanceCostRouter);
 // router.use("/airambulanceairportcities", airAmbulanceAirportCitiesRouter);
 
 export default router;

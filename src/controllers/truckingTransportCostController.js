@@ -28,3 +28,16 @@ export const AddBulkTruckingTransportCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const getBulkTruckingTransportCost = async (req, res, next) => {
+	try {
+		const truckingTransportCost = await TruckingTransportCost.find({});
+		res.status(200).send(truckingTransportCost);
+	} catch (error) {
+		console.error(`Error while Fetching TruckingTransportCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Fetching TruckingTransportCost Details. Please try again later",
+		});
+	}
+};

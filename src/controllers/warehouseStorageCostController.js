@@ -24,3 +24,16 @@ export const AddBulkWarehouseStorageCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const getBulkWarehouseStorageCost = async (req, res, next) => {
+	try {
+		const warehouseStorageCost = await WarehouseStorageCost.find({});
+		res.status(200).send(warehouseStorageCost);
+	} catch (error) {
+		console.error(`Error while Fetching WarehouseStorageCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Fetching WarehouseStorageCost Details. Please try again later",
+		});
+	}
+};
