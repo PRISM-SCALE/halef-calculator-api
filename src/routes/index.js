@@ -21,6 +21,8 @@ import PaymentsRouter from "./paymentsRoute.js";
 
 const router = express.Router();
 
+// Hi IS THIS WORKING?
+
 // router.use("/cities", citiesRouter);
 
 //routes
