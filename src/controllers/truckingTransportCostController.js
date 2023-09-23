@@ -31,7 +31,7 @@ export const AddBulkTruckingTransportCost = async (req, res, next) => {
 
 export const getBulkTruckingTransportCost = async (req, res, next) => {
 	try {
-		const truckingTransportCost = await TruckingTransportCost.find({});
+		const truckingTransportCost = await TruckingTransportCost.find({}).populate("vehicle");
 		res.status(200).send(truckingTransportCost);
 	} catch (error) {
 		console.error(`Error while Fetching TruckingTransportCost Details : ${error}`);
