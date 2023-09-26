@@ -1,10 +1,10 @@
 import express from "express";
-import {addPayment, getAllPayments} from "../controllers/PaymentController.js";
+import {addCustomerPayment, getAllCustomerPayments} from "../controllers/PaymentController.js";
 
 const router = express.Router();
 
-router.get("/", getAllPayments);
-router.post("/", addPayment);
+router.get("/", getAllCustomerPayments);
+router.post("/", addCustomerPayment);
 
 export default router;
 //airAmbulanceAirportCitiesRoute

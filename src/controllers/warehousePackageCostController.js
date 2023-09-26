@@ -34,7 +34,7 @@ export const AddBulkWarehousePackageCost = async (req, res, next) => {
 
 export const getBulkWarehousePackageCost = async (req, res, next) => {
 	try {
-		const warehousePackageCost = await WarehousePackageCost.find({});
+		const warehousePackageCost = await WarehousePackageCost.find({}).populate("packageType");
 		res.status(200).send(warehousePackageCost);
 	} catch (error) {
 		console.error(`Error while Fetching WarehousePackageCost Details : ${error}`);

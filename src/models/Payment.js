@@ -17,10 +17,11 @@ export const PaymentSchema = new Schema(
 			type: Number,
 			required: true,
 		},
-		shipmentId: {
+		paymentId: {
 			type: String,
 			required: true,
 		},
+		// paymentId: {type: Schema.Types.ObjectId, ref: "vehicle"},
 		isTermsAndConditionsVerified: {
 			type: Boolean,
 			required: true,

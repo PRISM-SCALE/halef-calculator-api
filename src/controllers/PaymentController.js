@@ -1,7 +1,8 @@
 import Payment from "../models/Payment.js";
+import PaymentId from "../models/PaymentIds.js";
 import {sendOTP} from "./OtpController.js";
 
-export const getAllPayments = async (req, res, next) => {
+export const getAllCustomerPayments = async (req, res, next) => {
 	try {
 		const payments = await Payment.find({});
 		res.status(200).send(payments);
@@ -14,9 +15,9 @@ export const getAllPayments = async (req, res, next) => {
 	}
 };
 
-export const addPayment = async (req, res, next) => {
+export const addCustomerPayment = async (req, res, next) => {
 	try {
-		const {name, email, phone, shipmentId, amount, isTermsAndConditionsVerified} = req.body;
+		const {name, email, phone, paymentId, amount, isTermsAndConditionsVerified} = req.body;
 
 		if (isNaN(phone)) {
 			res.status(400).send({error: "phone should be the type of Number"});
@@ -26,34 +27,43 @@ export const addPayment = async (req, res, next) => {
 			!Boolean(email) &&
 			!Boolean(phone) &&
 			!Boolean(name) &&
-			!Boolean(shipmentId) &&
+			!Boolean(paymentId) &&
 			!Boolean(amount) &&
 			!Boolean(isTermsAndConditionsVerified)
 		) {
 			res.status(400).send({
 				error:
-					"name, email, phone, shipmentId, amount and isTermsAndConditionsVerified is mandatory",
+					"name, email, phone, paymentId, amount and isTermsAndConditionsVerified is mandatory",
 			});
 		}
 
-		const newPayment = await Payment.create({
-			name,
-			email,
-			phone,
-			shipmentId,
-			amount,
-			isTermsAndConditionsVerified,
-		});
+		const checkExistingPaymentId = PaymentId.findOne({pid: paymentId});
 
-		await newPayment.save();
+		if (checkExistingPaymentId) {
+			const newPayment = await Payment.create({
+				name,
+				email,
+				phone,
+				paymentId,
+				amount,
+				isTermsAndConditionsVerified,
+			});
 
-		const verification = await sendOTP(phone);
+			await newPayment.save();
 
-		if (verification?.status === "pending") {
-			return res.status(200).send({
-				message: "Successfully created a user, verification is required",
-				isVerified: false,
-				paymentData: newPayment,
+			const verification = await sendOTP(phone);
+
+			if (verification?.status === "pending") {
+				return res.status(200).send({
+					message: "Successfully created a user, verification is required",
+					isVerified: false,
+					paymentData: newPayment,
+				});
+			}
+		} else {
+			return res.status(400).send({
+				error: "This Payment Id does not exist, please try again",
+				isError: true,
 			});
 		}
 
