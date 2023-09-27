@@ -37,9 +37,13 @@ export const addCustomerPayment = async (req, res, next) => {
 			});
 		}
 
-		const checkExistingPaymentId = PaymentId.findOne({pid: paymentId});
+		console.log(paymentId);
 
-		if (checkExistingPaymentId) {
+		const checkExistingPaymentId = await PaymentId.findOne({pid: paymentId});
+
+		console.log(checkExistingPaymentId?.pid);
+
+		if (checkExistingPaymentId?.pid === paymentId) {
 			const newPayment = await Payment.create({
 				name,
 				email,
@@ -62,7 +66,7 @@ export const addCustomerPayment = async (req, res, next) => {
 			}
 		} else {
 			return res.status(400).send({
-				error: "This Payment Id does not exist, please try again",
+				error: "This Payment Id does not exist, please provide valid PID",
 				isError: true,
 			});
 		}
