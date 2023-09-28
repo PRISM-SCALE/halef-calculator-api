@@ -45,7 +45,8 @@ export const reSendOTP = async (req, res) => {
 
 export const verifyPaymentToken = async (req, res) => {
 	try {
-		const {phone, code} = req.body;
+		const {phone, code, customerId} = req.body;
+		console.log("PID CUSTOMER", customerId);
 		const verification_check = await client.verify.v2
 			.services(serviceSid)
 			.verificationChecks.create({to: `+91${phone}`, code: code});
@@ -56,7 +57,7 @@ export const verifyPaymentToken = async (req, res) => {
 
 		if (verification_check?.status === "approved") {
 			const paymentData = await Payment.findOneAndUpdate(
-				{phone},
+				{_id: customerId},
 				{isPhoneVerified: true},
 				{new: true}
 			);
