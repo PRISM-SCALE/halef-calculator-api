@@ -30,8 +30,18 @@ export const getPaymentId = async (req, res, next) => {
 export const addPaymentIds = async (req, res, next) => {
 	try {
 		const data = req.body;
-		const paymentIdData = await PaymentId.create({...data});
-		res.status(200).send(paymentIdData);
+
+		const isPIDAvailable = await PaymentId.findOne({pid: data?.pid});
+
+		if (isPIDAvailable?.pid !== data?.pid) {
+			const paymentIdData = await PaymentId.create({...data});
+			res.status(200).send(paymentIdData);
+		} else {
+			res.status(400).send({
+				isDuplicate: true,
+				error: "The provided Payment ID already exist!",
+			});
+		}
 	} catch (error) {
 		console.error(`Error while creating payment ids. Details : ${error}`);
 		res.status(500).send({
@@ -46,12 +56,21 @@ export const editPaymentId = async (req, res, next) => {
 		const {id} = req.params;
 		const updatedValues = req.body;
 
-		const paymentIdData = await PaymentId.findOneAndUpdate(
-			{_id: id},
-			{...updatedValues},
-			{new: true}
-		);
-		res.status(200).send(paymentIdData);
+		const isPIDAvailable = await PaymentId.findOne({pid: updatedValues?.pid});
+
+		if (isPIDAvailable?.pid !== updatedValues?.pid) {
+			const paymentIdData = await PaymentId.findOneAndUpdate(
+				{_id: id},
+				{...updatedValues},
+				{new: true}
+			);
+			res.status(200).send(paymentIdData);
+		} else {
+			res.status(400).send({
+				isDuplicate: true,
+				error: "The provided Payment ID already exist!",
+			});
+		}
 	} catch (error) {
 		console.error(`Error while updating payment ids. Details : ${error}`);
 		res.status(500).send({

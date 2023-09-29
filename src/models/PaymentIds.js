@@ -2,7 +2,7 @@ import mongoose, {Schema} from "mongoose";
 
 export const PaymentIdSchema = new Schema(
 	{
-		pid: {type: String, required: true},
+		pid: {type: String, required: true, unique: true},
 		amount: {
 			type: Number,
 			required: true,
