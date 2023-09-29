@@ -4,7 +4,7 @@ import {sendOTP} from "./OtpController.js";
 
 export const getAllCustomerPayments = async (req, res, next) => {
 	try {
-		const payments = await Payment.find({});
+		const payments = await Payment.find({}).populate("paymentId");
 		res.status(200).send(payments);
 	} catch (error) {
 		console.error(`Error while fetching payments. Details : ${error}`);
@@ -39,7 +39,11 @@ export const addCustomerPayment = async (req, res, next) => {
 
 		console.log(paymentId);
 
-		const checkExistingPaymentId = await PaymentId.findOne({pid: paymentId});
+		const checkExistingPaymentId = await PaymentId.findOneAndUpdate(
+			{pid: paymentId},
+			{status: "PROCESSING"},
+			{new: true}
+		);
 
 		console.log(checkExistingPaymentId?.pid);
 
@@ -48,7 +52,7 @@ export const addCustomerPayment = async (req, res, next) => {
 				name,
 				email,
 				phone,
-				paymentId,
+				paymentId: checkExistingPaymentId?._id,
 				amount,
 				isTermsAndConditionsVerified,
 			});

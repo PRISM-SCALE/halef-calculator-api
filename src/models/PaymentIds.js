@@ -11,6 +11,7 @@ export const PaymentIdSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		status: {type: String, default: "PROCESSING", enum: ["PROCESSING", "REJECTED", "APPROVED"]},
 	},
 	{timestamps: true}
 );
