@@ -3,6 +3,7 @@ import mongoose, {Schema} from "mongoose";
 export const PaymentIdSchema = new Schema(
 	{
 		pid: {type: String, required: true, unique: true},
+		link: {type: String, required: true},
 		amount: {
 			type: Number,
 			required: true,

@@ -15,7 +15,7 @@ router.get("/:id", getPaymentId);
 router.post("/", addPaymentIds);
 router.put("/:id", editPaymentId);
 router.patch("/:id", editPaymentIdStatus);
-router.delete("/:id", removePaymentId);
+// router.delete("/:id", removePaymentId);
 
 export default router;
 //airAmbulanceAirportCitiesRoute

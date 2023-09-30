@@ -45,18 +45,20 @@ export const warehouseCalc = async (req, res, next) => {
 				.gte(Number(durationInDays))
 				.exec();
 
+			console.log("CFT", cft);
 			console.log("storageCostMap", storageCostMap);
 
 			if (!Boolean(storageCostMap))
 				return res.status(500).send({error: "Error calculating storage cost"});
 
-			const storageCost = storageCostMap?.cost * cft;
+			const storageCost = storageCostMap?.cost * cft * durationInDays;
 
 			console.log("storageCost", storageCost);
 
 			const packageCostMap = await WarehousePackageCost.findOne({packageType}).populate(
 				"packageType"
 			);
+
 			if (!Boolean(packageCostMap))
 				return res.status(500).send({error: "Error calculating package cost"});
 			const packageCost = packageCostMap?.cost * cft;
