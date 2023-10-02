@@ -33,7 +33,7 @@ export const warehouseCalc = async (req, res, next) => {
 		// createNewEstimateRequest.save();
 
 		if (Number(cft) > 2000) {
-			return res.send({message: "Thank you we will ge back"});
+			return res.send({message: "Thank you we will ge back", isMessage: true});
 		} else {
 			if (isNaN(cft) || isNaN(durationInDays))
 				return res.status(400).send({error: `cft & durationInDays MUST be a number!`});
