@@ -53,3 +53,23 @@ export const getBulkRelocationPackageCost = async (req, res) => {
 		});
 	}
 };
+
+export const updateRelocationPackageCost = async (req, res) => {
+	try {
+		const {id} = req.params;
+		const {cost} = req.body;
+
+		const result = await RelocationPackageCost.findOneAndUpdate({_id: id}, {cost}, {new: true})
+			.populate("packageType")
+			.populate("houseType")
+			.exec();
+
+		return res.status(200).send(result);
+	} catch (error) {
+		console.error(`Error while Fetching RelocationPackageCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Fetching RelocationPackageCost Details. Please try again later",
+		});
+	}
+};

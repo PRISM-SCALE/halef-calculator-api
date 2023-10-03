@@ -6,6 +6,7 @@ export const ServiceSchema = new Schema(
 		description: {type: String, required: true},
 		code: {type: String, required: true, unique: true},
 		icon: {type: String, required: true},
+		// isActive: {type: Boolean, required: true},
 	},
 	{timestamps: true}
 );

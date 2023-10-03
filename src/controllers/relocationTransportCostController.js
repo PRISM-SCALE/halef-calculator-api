@@ -39,3 +39,24 @@ export const getRelocationTransportCost = async (req, res) => {
 		});
 	}
 };
+
+export const updateRelocationTransportCost = async (req, res) => {
+	try {
+		const {id} = req.params;
+		const {cost} = req.body;
+
+		const result = await RelocationTransportCost.findOneAndUpdate(
+			{_id: id},
+			{cost},
+			{new: true}
+		).populate("vehicle");
+
+		return res.status(200).send(result);
+	} catch (error) {
+		console.error(`Error while Updating RelocationTransportCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Updating RelocationTransportCost Details. Please try again later",
+		});
+	}
+};
