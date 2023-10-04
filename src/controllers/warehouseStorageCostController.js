@@ -37,3 +37,22 @@ export const getBulkWarehouseStorageCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const updateWarehouseStorageCost = async (req, res, next) => {
+	try {
+		const {id} = req.params;
+		const {cost} = req.body;
+		const warehouseStorageCost = await WarehouseStorageCost.findOneAndUpdate(
+			{_id: id},
+			{cost},
+			{new: true}
+		);
+		res.status(200).send(warehouseStorageCost);
+	} catch (error) {
+		console.error(`Error while Updating WarehouseStorageCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Updating WarehouseStorageCost Details. Please try again later",
+		});
+	}
+};

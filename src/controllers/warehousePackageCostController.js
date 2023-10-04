@@ -44,3 +44,22 @@ export const getBulkWarehousePackageCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const updateWarehousePackageCost = async (req, res, next) => {
+	try {
+		const {id} = req.params;
+		const {cost} = req.body;
+		const warehousePackageCost = await WarehousePackageCost.findOneAndUpdate(
+			{_id: id},
+			{cost},
+			{new: true}
+		).populate("packageType");
+		res.status(200).send(warehousePackageCost);
+	} catch (error) {
+		console.error(`Error while Updating WarehousePackageCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Updating WarehousePackageCost Details. Please try again later",
+		});
+	}
+};

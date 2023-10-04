@@ -35,3 +35,22 @@ export const getBulkCourierCargoTransportCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const updateCourierCargoTransportCost = async (req, res, next) => {
+	try {
+		const {id} = req.params;
+		const {cost} = req.body;
+		const courierCargoTransportCost = await CourierCargoCost.findOneAndUpdate(
+			{_id: id},
+			{cost},
+			{new: true}
+		);
+		res.status(200).send(courierCargoTransportCost);
+	} catch (error) {
+		console.error(`Error while Updating CourierCargoCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Updating CourierCargoCost Details. Please try again later",
+		});
+	}
+};

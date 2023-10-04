@@ -31,3 +31,22 @@ export const getBulkAirAmbulanceCost = async (req, res, next) => {
 		});
 	}
 };
+
+export const updateAirAmbulanceCost = async (req, res, next) => {
+	try {
+		const {id} = req.params;
+		const {cost} = req.body;
+		const airAmbulanceCost = await AirAmbulanceCost.findOneAndUpdate(
+			{_id: id},
+			{rate: cost},
+			{new: true}
+		);
+		res.status(200).send(airAmbulanceCost);
+	} catch (error) {
+		console.error(`Error while Updating AirAmbulanceCost Details : ${error}`);
+		res.status(500).send({
+			error: "Internal Server Error",
+			message: "Error while Updating AirAmbulanceCost Details. Please try again later",
+		});
+	}
+};
