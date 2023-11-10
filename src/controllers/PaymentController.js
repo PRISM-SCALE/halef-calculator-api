@@ -61,11 +61,15 @@ export const addCustomerPayment = async (req, res, next) => {
 
 			const verification = await sendOTP(phone);
 
+			const payment = await Payment.findOne({paymentId: newPayment?.paymentId}).populate(
+				"paymentId"
+			);
+
 			if (verification?.status === "pending") {
 				return res.status(200).send({
 					message: "Successfully created a user, verification is required",
 					isVerified: false,
-					paymentData: newPayment,
+					paymentData: payment,
 				});
 			}
 		} else {
@@ -94,7 +98,6 @@ export const addCustomerPayment = async (req, res, next) => {
 		// 		user: checkPaymentData,
 		// 	});
 		// }
-
 		// res.status(200).send(payment);
 	} catch (error) {
 		console.error(`Error while creating payment. Details : ${error}`);

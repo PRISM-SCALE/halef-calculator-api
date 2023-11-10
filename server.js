@@ -43,3 +43,7 @@ app.get("/", (req, res) => {
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`);
 // });
+
+// # TWILIO_ACCOUNT_SID=AC0de82b1456aa1f360177d3c952417ca5
+// # TWILIO_AUTH_TOKEN=602e9ba37263ba92f7a907ff01c7acff
+// # TWILIO_SERVICE_SID=VA5bfd2a01679dd95397f0ed4928f0bd62
