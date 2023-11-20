@@ -4,9 +4,42 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import router from "./src/routes/index.js";
+import uniqid from "uniqid";
 
 dotenv.config();
 const app = express();
+
+// const ID = uniqid.time("my-prefix-", "-my-suffix");
+
+// console.log(ID);
+// function generateUniqueId(prefix, suffix, idFormat) {
+// 	let idString;
+// 	let counter = 1; // Initialize the counter variable
+
+// 	if (idFormat === "counter") {
+// 		// Generate a counter-wise ID
+// 		idString = counter.toString().padStart(4, "0"); // Pad the counter with zeroes
+// 		counter++; // Increment the counter for the next ID
+// 	} else {
+// 		// Generate a random alphanumeric ID
+// 		const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+// 		idString = "";
+
+// 		for (let i = 0; i < idFormat.length; i++) {
+// 			let randomIndex = Math.floor(Math.random() * characters.length);
+// 			idString += characters[randomIndex];
+// 		}
+// 	}
+
+// 	return prefix + idString + suffix;
+// }
+
+// const prefix = "my-prefix-";
+// const suffix = "-my-suffix";
+// const idFormat = "counter"; // Or 'alphanumeric'
+
+// const uniqueId = generateUniqueId(prefix, suffix, idFormat);
+// console.log(uniqueId); // Output: my-prefix-0001-my-suffix
 
 //DB connection
 mongoose
