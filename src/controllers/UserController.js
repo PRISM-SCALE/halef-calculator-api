@@ -1,5 +1,5 @@
 import User from "../models/User.js";
-import {sendOTP} from "./OtpController.js";
+import {createUserOTP} from "./Fast2SmsOTPController.js";
 
 export const createUser = async (req, res) => {
 	try {
@@ -25,9 +25,20 @@ export const createUser = async (req, res) => {
 
 			await createNewUser.save();
 
-			const verification = await sendOTP(phone);
+			// const verification = await createOTP(phone);
 
-			if (verification?.status === "pending") {
+			// if (verification?.status === "pending") {
+			// 	return res.status(200).send({
+			// 		message: "Successfully created a user, verification is required",
+			// 		isVerified: false,
+			// 		user: createNewUser,
+			// 	});
+			// }
+
+			const data = await createUserOTP(phone);
+			console.log("USER CONTROLLER", data);
+
+			if (data?.return) {
 				return res.status(200).send({
 					message: "Successfully created a user, verification is required",
 					isVerified: false,
@@ -38,9 +49,26 @@ export const createUser = async (req, res) => {
 
 		// USER NOT VERIFIED SEND OTP
 		if (!checkUser?.isPhoneVerified) {
-			const verification = await sendOTP(phone);
+			// 	const verification = await sendOTP(phone);
 
-			if (verification.status === "pending") {
+			// 	if (verification.status === "pending") {
+			// 		return res.status(200).send({
+			// 			message: "User Exists, verification is required",
+			// 			isVerified: false,
+			// 			user: checkUser,
+			// 		});
+			// 	}
+			// } else {
+			// 	return res.status(200).send({
+			// 		message: "Successfully Verified",
+			// 		isVerified: true,
+			// 		user: checkUser,
+			// 	});
+			// }
+
+			const data = await createOTP(phone);
+
+			if (data?.return) {
 				return res.status(200).send({
 					message: "User Exists, verification is required",
 					isVerified: false,

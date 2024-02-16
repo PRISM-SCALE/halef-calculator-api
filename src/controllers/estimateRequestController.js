@@ -20,7 +20,7 @@ export const getOneEstimates = async (req, res, next) => {
 	try {
 		const id = req.params.id;
 
-		const estimates = await EstimateRequest.find({_id: id})
+		const estimates = await EstimateRequest.findOne({_id: id})
 			.populate("user")
 			.populate("service")
 			.exec();

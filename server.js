@@ -12,7 +12,7 @@ const app = express();
 // const ID = uniqid.time("my-prefix-", "-my-suffix");
 
 // console.log(ID);
-// function generateUniqueId(prefix, suffix, idFormat) {
+// function generateUniqueId(prefix, suffix, idFormat) {`
 // 	let idString;
 // 	let counter = 1; // Initialize the counter variable
 

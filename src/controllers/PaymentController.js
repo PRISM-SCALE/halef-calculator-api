@@ -1,6 +1,6 @@
 import Payment from "../models/Payment.js";
 import PaymentId from "../models/PaymentIds.js";
-import {sendOTP} from "./OtpController.js";
+import {createPaymentOTP} from "./Fast2SmsOTPController.js";
 
 export const getAllCustomerPayments = async (req, res, next) => {
 	try {
@@ -59,13 +59,27 @@ export const addCustomerPayment = async (req, res, next) => {
 
 			await newPayment.save();
 
-			const verification = await sendOTP(phone);
+			// const verification = await sendOTP(phone);
 
+			// const payment = await Payment.findOne({paymentId: newPayment?.paymentId}).populate(
+			// 	"paymentId"
+			// );
+
+			// if (verification?.status === "pending") {
+			// 	return res.status(200).send({
+			// 		message: "Successfully created a user, verification is required",
+			// 		isVerified: false,
+			// 		paymentData: payment,
+			// 	});
+			// }
+
+			const data = await createPaymentOTP(phone);
 			const payment = await Payment.findOne({paymentId: newPayment?.paymentId}).populate(
 				"paymentId"
 			);
+			console.log("PAYMENT CONTROLLER", data);
 
-			if (verification?.status === "pending") {
+			if (data?.return) {
 				return res.status(200).send({
 					message: "Successfully created a user, verification is required",
 					isVerified: false,

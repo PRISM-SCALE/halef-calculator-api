@@ -11,6 +11,7 @@ export const UserSchema = new Schema(
 		},
 		isPhoneVerified: {type: Boolean, required: true, default: false},
 		isEmailVerified: {type: Boolean, required: true, default: false},
+		otpValue: {type: Number},
 	},
 	{timestamps: true}
 );

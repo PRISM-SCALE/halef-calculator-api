@@ -16,6 +16,13 @@ const serviceSid = process.env.TWILIO_SERVICE_SID;
 
 const client = twilio(accountSid, authToken);
 
+// FETCHING THE TWILIO BALANCE
+// client.balance.fetch().then((data) => {
+// 	const balance = Math.round(data.balance * 100) / 100;
+// 	const currency = data.currency;
+// 	console.log(`Your account balance is ${balance} ${currency}.`);
+// });
+
 export const createOTP = async (phone) => {
 	const verification = await client.verify.v2
 		.services(serviceSid)
