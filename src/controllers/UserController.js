@@ -66,7 +66,7 @@ export const createUser = async (req, res) => {
 			// 	});
 			// }
 
-			const data = await createOTP(phone);
+			const data = await createUserOTP(phone);
 
 			if (data?.return) {
 				return res.status(200).send({

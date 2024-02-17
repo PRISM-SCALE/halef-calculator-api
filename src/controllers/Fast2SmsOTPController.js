@@ -9,9 +9,8 @@ import Payment from "../models/Payment.js";
 dotenv.config();
 
 const FAST2SMS_API_KEY = process.env.FAST2SMS_API_KEY;
-
-// TODO: AFTER DLT APPROVAL add Approved Sender ID Here
-const SENDER_ID = "your_sender_id";
+const SENDER_ID = process.env.FAST2SMS_SENDER_ID;
+const MESSAGE_ID = process.env.FAST2SMS_MESSAGE_ID;
 
 export const createUserOTP = async (phone) => {
 	try {
@@ -29,9 +28,11 @@ export const createUserOTP = async (phone) => {
 		const response = await axios.get(url, {
 			params: {
 				authorization: FAST2SMS_API_KEY,
-				variables_values: otp,
+				sender_id: SENDER_ID,
+				variables_values: `${otp}|10 minutes`, //{#var#} add variable values here
 				route: process.env.FAST2SMS_ROUTE,
 				numbers: phone,
+				message: 164918, //MESSAGE_ID or 164918
 			},
 		});
 
