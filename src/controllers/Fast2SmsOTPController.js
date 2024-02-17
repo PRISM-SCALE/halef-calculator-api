@@ -47,14 +47,18 @@ export const createUserOTP = async (phone) => {
 	}
 };
 
-export const createPaymentOTP = async (phone) => {
+export const createPaymentOTP = async (phone, paymentId) => {
 	try {
 		const otp = random.int(100000, 999999);
 
-		const updateOTP = await Payment.findOneAndUpdate({phone}, {otpValue: otp}, {new: true});
+		const updateOTP = await Payment.findOneAndUpdate(
+			{paymentId: paymentId},
+			{otpValue: otp},
+			{new: true}
+		);
 		console.log("=============================================================");
-		console.log("OTP VALUE", otp);
-		console.log("UPDATED OTP", updateOTP);
+		console.log("PAYMENT OTP VALUE", otp);
+		console.log("PAYMENT UPDATED OTP", updateOTP);
 		console.log("=============================================================");
 
 		// const message = `Your Halef International Calculator OTP is: ${otp}. Do not share it with anyone.`;
@@ -162,12 +166,13 @@ export const verifyPaymentToken = async (req, res) => {
 	try {
 		const {phone, code, customerId} = req.body;
 
-		const verifyOtp = await Payment.findOne({phone});
+		const verifyOtp = await Payment.findOne({_id: customerId});
+
+		console.log(verifyOtp);
 
 		console.log("========================================================");
 		console.log("VERIFICATION", phone);
 		console.log("VERIFICATION", code);
-		console.log("VERIFICATION", customerId);
 		console.log("VERIFICATION", verifyOtp?.otpValue);
 		console.log("========================================================");
 

@@ -37,22 +37,34 @@ export const addCustomerPayment = async (req, res, next) => {
 			});
 		}
 
-		console.log(paymentId);
+		const checkForExistingPID = await PaymentId.findOne({pid: paymentId});
 
-		const checkExistingPaymentId = await PaymentId.findOneAndUpdate(
-			{pid: paymentId},
-			{status: "PROCESSING"},
-			{new: true}
-		);
+		if (checkForExistingPID?.status === "APPROVED") {
+			return res.status(400).send({
+				error: "This is an Existing Approved PID, Please provide an alternative PID",
+				isError: true,
+			});
+		}
 
-		console.log(checkExistingPaymentId?.pid);
+		if (checkForExistingPID?.status === "REJECTED") {
+			return res.status(400).send({
+				error: "This is an Existing Rejected PID, Please provide an alternative PID",
+				isError: true,
+			});
+		}
 
-		if (checkExistingPaymentId?.pid === paymentId) {
+		console.log("*******************************************");
+		console.log("*******************************************");
+		console.log("CUSTOMER PAYMENT", checkForExistingPID);
+		console.log("*******************************************");
+		console.log("*******************************************");
+
+		if (checkForExistingPID?.pid === paymentId) {
 			const newPayment = await Payment.create({
 				name,
 				email,
 				phone,
-				paymentId: checkExistingPaymentId?._id,
+				paymentId: checkForExistingPID?._id,
 				amount,
 				isTermsAndConditionsVerified,
 			});
@@ -73,7 +85,7 @@ export const addCustomerPayment = async (req, res, next) => {
 			// 	});
 			// }
 
-			const data = await createPaymentOTP(phone);
+			const data = await createPaymentOTP(phone, checkForExistingPID?._id);
 			const payment = await Payment.findOne({paymentId: newPayment?.paymentId}).populate(
 				"paymentId"
 			);
