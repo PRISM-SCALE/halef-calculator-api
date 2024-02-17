@@ -63,9 +63,11 @@ export const createPaymentOTP = async (phone) => {
 		const response = await axios.get(url, {
 			params: {
 				authorization: FAST2SMS_API_KEY,
-				variables_values: otp,
+				sender_id: SENDER_ID,
+				variables_values: `${otp}|10 minutes`, //{#var#} add variable values here
 				route: process.env.FAST2SMS_ROUTE,
 				numbers: phone,
+				message: MESSAGE_ID, //MESSAGE_ID or 164918
 			},
 		});
 
