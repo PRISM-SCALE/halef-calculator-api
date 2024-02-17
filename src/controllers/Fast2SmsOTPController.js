@@ -32,7 +32,7 @@ export const createUserOTP = async (phone) => {
 				variables_values: `${otp}|10 minutes`, //{#var#} add variable values here
 				route: process.env.FAST2SMS_ROUTE,
 				numbers: phone,
-				message: 164918, //MESSAGE_ID or 164918
+				message: MESSAGE_ID, //MESSAGE_ID or 164918
 			},
 		});
 
