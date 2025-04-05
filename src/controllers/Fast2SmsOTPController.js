@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import random from "random";
 import axios from "axios";
-
+import Resend from "resend";
 import User from "../models/User.js";
 import Payment from "../models/Payment.js";
 
@@ -11,6 +11,7 @@ dotenv.config();
 const FAST2SMS_API_KEY = process.env.FAST2SMS_API_KEY;
 const SENDER_ID = process.env.FAST2SMS_SENDER_ID;
 const MESSAGE_ID = process.env.FAST2SMS_MESSAGE_ID;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const createUserOTP = async (phone) => {
 	try {
@@ -36,6 +37,24 @@ export const createUserOTP = async (phone) => {
 			},
 		});
 
+		const emailResponse = await resend.emails.send({
+			from: process.env.FROM_SENDER_ADDRESS,
+			to,
+      		subject,
+			html: `
+			  <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333;">
+				<h1 style="color: #0073e6;">Booking Confirmation</h1>
+				<p>Dear Customer,</p>
+				<p>Below is your OTP Code:</p>
+				<div style="text-align: center; margin-top: 20px;">
+					<p>${otp}</p>
+				</div>
+				<p>We look forward to serving you.</p>
+			  </div>
+			`,
+		})
+		
+		console.log("Email sent successfully:", emailResponse);
 		console.log("=============================================================");
 		console.log("RESPONSE DATA", response?.data);
 		console.log("=============================================================");
